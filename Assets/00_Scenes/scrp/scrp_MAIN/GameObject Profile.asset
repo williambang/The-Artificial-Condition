@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 114479536112237120}
   - {fileID: 114039799496722518}
   - {fileID: 114391726236412312}
+  - {fileID: 114341403882729380}
 --- !u!114 &114039799496722518
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -31,7 +32,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 129.27
     min: 0
     max: 360
   skyIntensityMode:
@@ -39,14 +40,14 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: -3.67
   multiplier:
     m_OverrideState: 1
-    m_Value: 0.66
+    m_Value: 0.9
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 1.0667437
+    m_Value: 2.3874826
     min: 0
   desiredLuxValue:
     m_OverrideState: 0
@@ -63,7 +64,29 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 334d1b1d1b7f76844a5811a24ef55447, type: 3}
+    m_Value: {fileID: 8900000, guid: c2fac121dd49f4240b189a5bc5baf740, type: 3}
+--- !u!114 &114341403882729380
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
+  m_Name: VolumetricLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  depthExtent:
+    m_OverrideState: 1
+    m_Value: 40.88
+    min: 0.1
+  sliceDistributionUniformity:
+    m_OverrideState: 1
+    m_Value: 0.045
+    min: 0
+    max: 1
 --- !u!114 &114391726236412312
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -93,7 +116,7 @@ MonoBehaviour:
     max: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 1250
+    m_Value: 60
     min: 0
   mipFogMaxMip:
     m_OverrideState: 0
@@ -110,24 +133,24 @@ MonoBehaviour:
     min: 0
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.495283, g: 0.93378794, b: 1, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 7.15
+    m_Value: 239.1
     min: 1
   baseHeight:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -64.3
   meanHeight:
     m_OverrideState: 0
     m_Value: 10
     min: 1
   anisotropy:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.33
     min: -1
     max: 1
   globalLightProbeDimmer:
@@ -136,8 +159,8 @@ MonoBehaviour:
     min: 0
     max: 1
   enableDistantFog:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &114479536112237120
 MonoBehaviour:
   m_ObjectHideFlags: 3
