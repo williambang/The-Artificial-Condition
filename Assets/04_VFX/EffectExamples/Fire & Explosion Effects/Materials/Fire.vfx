@@ -835,7 +835,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":5.372720241546631,"b":5.372720241546631,"a":1.0},"time":0.0},{"color":{"r":4.8224711418151859,"g":0.0,"b":0.0,"a":1.0},"time":0.15294118225574494},{"color":{"r":5.23671817779541,"g":3.5005362033843996,"b":0.9139555096626282,"a":1.0},"time":0.34412145614624026},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.9771709442138672,"time":0.24411383271217347},{"alpha":0.9577465057373047,"time":0.3499961793422699},{"alpha":0.0,"time":0.7441214323043823}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":3.7200703620910646,"g":5.803309917449951,"b":14.210668563842774,"a":1.0},"time":0.0},{"color":{"r":4.8224711418151859,"g":0.0,"b":0.0,"a":1.0},"time":0.09117265790700913},{"color":{"r":5.23671817779541,"g":3.5005362033843996,"b":0.9139555096626282,"a":1.0},"time":0.34412145614624026},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.33725491166114809,"time":0.0},{"alpha":0.9607843160629273,"time":0.24411383271217347},{"alpha":1.0,"time":0.3499961793422699},{"alpha":0.0,"time":0.7558861970901489}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: gradient
@@ -1268,8 +1268,8 @@ VisualEffectResource:
       = position;\n#endif\n\t\t\t\n\t\t\t{\n\t\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t\t}\n\t\t\t{\n\t\t\t    CollisionPlane_0( /*inout
       */position,  /*inout */velocity,  /*inout */age, lifetime, float3(6.068328,5.681937E-06,2.394568E-07),
-      float3(-0.7580509,0.02358729,-0.6517687), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.7580509,0.02358729,-0.6517687,-4.600102));\n\t\t\t}\n\t\t\tEulerIntegration(
+      float3(-0.6647728,0.07145014,-0.7436209), (float)0.1, (float)0, (float)0, deltaTime_a,
+      (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,-4.03406));\n\t\t\t}\n\t\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\t\tAge( /*inout */age, deltaTime_a);\n\t\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\t\n\n\t\t\tif (alive)\n\t\t\t{\n\t\t\t\tattributeBuffer.Store3((index
       * 0x4 + 0x0) << 2,asuint(velocity));\n\t\t\t\tattributeBuffer.Store((index *
@@ -1289,8 +1289,8 @@ VisualEffectResource:
       = position;\n#endif\n\t\t\n\t\t{\n\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t}\n\t\t{\n\t\t    CollisionPlane_0( /*inout */position,
       \ /*inout */velocity,  /*inout */age, lifetime, float3(6.068328,5.681937E-06,2.394568E-07),
-      float3(-0.7580509,0.02358729,-0.6517687), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.7580509,0.02358729,-0.6517687,-4.600102));\n\t\t}\n\t\tEulerIntegration(
+      float3(-0.6647728,0.07145014,-0.7436209), (float)0.1, (float)0, (float)0, deltaTime_a,
+      (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,-4.03406));\n\t\t}\n\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\tAge( /*inout */age, deltaTime_a);\n\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\n\n\t\tattributeBuffer.Store3((index * 0x4
       + 0x0) << 2,asuint(velocity));\n\t\tattributeBuffer.Store((index * 0x3 + 0x16140)
@@ -1738,11 +1738,11 @@ VisualEffectResource:
         - m_ExpressionIndex: 32
           m_Value: {x: 6.0683284, y: 0.000005681937, z: 0.00000023945682}
         - m_ExpressionIndex: 33
-          m_Value: {x: -0.7580509, y: 0.023587292, z: -0.65176874}
+          m_Value: {x: -0.6647728, y: 0.071450144, z: -0.7436209}
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 11
-          m_Value: {x: -0.7580509, y: 0.023587292, z: -0.65176874, w: -4.600102}
+          m_Value: {x: -0.6647728, y: 0.071450144, z: -0.7436209, w: -4.0340595}
       m_Uint:
         m_Array: []
       m_Int:
@@ -1874,16 +1874,16 @@ VisualEffectResource:
         - m_ExpressionIndex: 4
           m_Value:
             serializedVersion: 2
-            key0: {r: 0, g: 5.3727202, b: 5.3727202, a: 1}
-            key1: {r: 4.822471, g: 0, b: 0, a: 0.97717094}
-            key2: {r: 5.236718, g: 3.5005362, b: 0.9139555, a: 0.9577465}
+            key0: {r: 3.7200704, g: 5.80331, b: 14.210669, a: 0.3372549}
+            key1: {r: 4.822471, g: 0, b: 0, a: 0.9607843}
+            key2: {r: 5.236718, g: 3.5005362, b: 0.9139555, a: 1}
             key3: {r: 1, g: 1, b: 1, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
             ctime0: 0
-            ctime1: 10023
+            ctime1: 5975
             ctime2: 22552
             ctime3: 65535
             ctime4: 0
@@ -1893,7 +1893,7 @@ VisualEffectResource:
             atime0: 0
             atime1: 15998
             atime2: 22937
-            atime3: 48766
+            atime3: 49537
             atime4: 0
             atime5: 0
             atime6: 0
@@ -3146,7 +3146,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Plane, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":6.068328380584717,"y":0.000005681937182089314,"z":2.3945682414705518e-7},"normal":{"x":-0.7580509185791016,"y":0.023587292060256006,"z":-0.6517687439918518}}'
+      m_SerializableObject: '{"position":{"x":6.068328380584717,"y":0.000005681937182089314,"z":2.3945682414705518e-7},"normal":{"x":-0.6647728085517883,"y":0.0714501440525055,"z":-0.7436208724975586}}'
     m_Space: 0
   m_Property:
     name: Plane
