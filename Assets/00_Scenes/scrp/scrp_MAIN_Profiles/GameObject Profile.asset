@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 114036613736132878}
   - {fileID: 114808681760173568}
   - {fileID: 114716607493680126}
+  - {fileID: 114478234292851946}
 --- !u!114 &114036613736132878
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -84,7 +85,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.371
+    value: 0.497
   smoothness:
     overrideState: 0
     value: 0.2
@@ -119,16 +120,38 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 33.41
+    value: 14.1
   aperture:
     overrideState: 1
-    value: 16.7
+    value: 5.3
   focalLength:
     overrideState: 1
-    value: 50
+    value: 101.59
   kernelSize:
     overrideState: 1
-    value: 0
+    value: 3
+--- !u!114 &114478234292851946
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  shutterAngle:
+    overrideState: 1
+    value: 145
+  sampleCount:
+    overrideState: 1
+    value: 15
 --- !u!114 &114678914037211936
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -181,11 +204,11 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -0.4
   tint:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 21.6
   colorFilter:
     overrideState: 1
     value: {r: 1.5078533, g: 1.7382197, b: 1.9999998, a: 1}
@@ -194,16 +217,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 0
-    value: 0
+    value: -23.3
   brightness:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 2.23
+    overrideState: 1
+    value: 0.5
   contrast:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -27.9
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -232,8 +255,8 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.9391099, y: 1, z: 0.8495899, w: 0}
   gamma:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
@@ -1533,14 +1556,14 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1.22
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0
   noiseFilterTolerance:
     overrideState: 0
     value: 0
