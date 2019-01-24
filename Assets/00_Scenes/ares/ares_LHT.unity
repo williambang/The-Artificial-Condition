@@ -181,7 +181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 21.166, y: -239.087, z: -172.985}
 --- !u!114 &31383082
 MonoBehaviour:
@@ -277,6 +277,54 @@ MonoBehaviour:
   blockerSampleCount: 24
   filterSampleCount: 16
   minFilterSize: 0.00001
+--- !u!1 &872504810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872504812}
+  - component: {fileID: 872504811}
+  m_Layer: 0
+  m_Name: HDRI_Sky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872504811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872504810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 1b02b877d23e9b145a18ae45fc61a2c2, type: 2}
+--- !u!4 &872504812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872504810}
+  m_LocalRotation: {x: -0, y: 0.17067915, z: -0, w: 0.9853267}
+  m_LocalPosition: {x: -1.7079856, y: 4.994379, z: -57.139107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 19.655, z: 0}
 --- !u!1 &1257020605
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +411,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   lightDimmer: 1
   m_VolumetricDimmer: 1
-  lightUnit: 0
+  lightUnit: 2
   sunDiskSize: 1
   sunHaloSize: 0.1
   fadeDistance: 10000
@@ -401,7 +449,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.54141265, b: 0.3160377, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 600
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -440,7 +488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085470679
 GameObject:
@@ -528,7 +576,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   lightDimmer: 1
   m_VolumetricDimmer: 1
-  lightUnit: 0
+  lightUnit: 2
   sunDiskSize: 1
   sunHaloSize: 0.1
   fadeDistance: 10000
@@ -566,7 +614,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.54141265, b: 0.3160377, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 600
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -605,5 +653,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
