@@ -841,7 +841,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.698113203048706,"g":0.6734157800674439,"b":0.6487184166908264,"a":1.0},"time":0.3764705955982208},{"color":{"r":0.2924528121948242,"g":0.2924528121948242,"b":0.2924528121948242,"a":1.0},"time":0.7117723226547241},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.43529412150382998,"time":0.0},{"alpha":0.45098039507865908,"time":0.3147020637989044},{"alpha":0.4313725531101227,"time":0.4588235318660736},{"alpha":0.12941177189350129,"time":0.6029449701309204},{"alpha":0.003921568859368563,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.698113203048706,"g":0.6734157800674439,"b":0.6487184166908264,"a":1.0},"time":0.3529411852359772},{"color":{"r":0.2924528121948242,"g":0.2924528121948242,"b":0.2924528121948242,"a":1.0},"time":0.5941252708435059},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.43529412150382998,"time":0.07058823853731156},{"alpha":0.45098039507865908,"time":0.22941939532756806},{"alpha":0.4313725531101227,"time":0.5147020816802979},{"alpha":0.12941177189350129,"time":0.6882429122924805},{"alpha":0.003921568859368563,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: gradient
@@ -983,7 +983,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 15
+      m_SerializableObject: 20
     m_Space: 2147483647
   m_Property:
     name: Max
@@ -1157,13 +1157,13 @@ VisualEffectResource:
     source: "#pragma kernel CSMain\n#include \"HLSLSupport.cginc\"\n#define NB_THREADS_PER_GROUP
       64\n#define VFX_USE_VELOCITY_CURRENT 1\n#define VFX_USE_SEED_CURRENT 1\n#define
       VFX_USE_LIFETIME_CURRENT 1\n#define VFX_USE_SIZE_CURRENT 1\n#define VFX_USE_COLOR_CURRENT
-      1\n#define VFX_USE_POSITION_CURRENT 1\n#define VFX_USE_DIRECTION_CURRENT 1\n#define
+      1\n#define VFX_USE_DIRECTION_CURRENT 1\n#define VFX_USE_POSITION_CURRENT 1\n#define
       VFX_USE_TEXINDEX_CURRENT 1\n#define VFX_USE_ALIVE_CURRENT 1\n#define VFX_USE_AGE_CURRENT
       1\n#define VFX_LOCAL_SPACE 1\n\n\nCBUFFER_START(parameters)\n    float3 Min_a;\n
       \   float Min_b;\n    float3 Max_a;\n    float Max_b;\n    float3 Color_d;\n
-      \   float Size_c;\n    float3 ArcCircle_circle_center_e;\n    float ArcCircle_circle_radius_e;\n
-      \   float ArcCircle_arc_e;\n    uint3 PADDING_0;\nCBUFFER_END\n\n\n#include
-      \"Packages/com.unity.visualeffectgraph/Shaders/Common/VFXCommonCompute.cginc\"\n#include
+      \   float Size_c;\n    float3 ArcCircle_circle_center_f;\n    float MinSpeed_e;\n
+      \   float MaxSpeed_e;\n    float ArcCircle_circle_radius_f;\n    float ArcCircle_arc_f;\n
+      \   float ArcSequencer_f;\nCBUFFER_END\n\n\n#include \"Packages/com.unity.visualeffectgraph/Shaders/Common/VFXCommonCompute.cginc\"\n#include
       \"Packages/com.unity.visualeffectgraph/Shaders/VFXCommon.cginc\"\n\n\n\nRWByteAddressBuffer
       attributeBuffer;\nByteAddressBuffer sourceAttributeBuffer;\n\nCBUFFER_START(initParams)\n#if
       !VFX_USE_SPAWNER_FROM_GPU\n    uint nbSpawned;\t\t\t\t\t// Numbers of particle
@@ -1182,13 +1182,17 @@ VisualEffectResource:
       float size, float Size) /*attribute:size Composition:Overwrite Source:Slot Random:Off
       channels:XYZ */\n{\n    size = Size;\n}\nvoid SetAttribute_FDD06EC7(inout float3
       color, float3 Color) /*attribute:color Composition:Overwrite Source:Slot Random:Off
-      channels:XYZ */\n{\n    color = Color;\n}\nvoid PositionCircle_18D(inout float3
+      channels:XYZ */\n{\n    color = Color;\n}\nvoid VelocitySpeed_18C(inout float3
+      velocity, float3 direction, inout uint seed, float MinSpeed, float MaxSpeed)
+      /*composition:Add speedMode:Random */\n{\n    float speed = lerp(MinSpeed,MaxSpeed,RAND);\n
+      \   velocity += direction * speed;\n}\nvoid PositionCircle_18C(inout float3
       position, inout uint seed, inout float3 direction, float3 ArcCircle_circle_center,
-      float ArcCircle_circle_radius, float ArcCircle_arc, float volumeFactor) /*positionMode:Volume
-      spawnMode:Randomized */\n{\n    float theta = ArcCircle_arc * RAND;\n    float
-      rNorm = sqrt(volumeFactor + (1 - volumeFactor) * RAND);\n    \n    float2 sincosTheta;\n
-      \   sincos(theta, sincosTheta.x, sincosTheta.y);\n    \n    direction = float3(sincosTheta,
-      0.0f);\n    position.xy += sincosTheta * rNorm * ArcCircle_circle_radius + ArcCircle_circle_center;\n
+      float ArcCircle_circle_radius, float ArcCircle_arc, float ArcSequencer, float
+      volumeFactor) /*positionMode:Volume spawnMode:Custom */\n{\n    float theta
+      = ArcCircle_arc * ArcSequencer;\n    float rNorm = sqrt(volumeFactor + (1 -
+      volumeFactor) * RAND);\n    \n    float2 sincosTheta;\n    sincos(theta, sincosTheta.x,
+      sincosTheta.y);\n    \n    direction = float3(sincosTheta, 0.0f);\n    position.xy
+      += sincosTheta * rNorm * ArcCircle_circle_radius + ArcCircle_circle_center;\n
       \   \n}\n\n\n\n[numthreads(NB_THREADS_PER_GROUP,1,1)]\nvoid CSMain(uint3 groupId
       \         : SV_GroupID,\n            uint3 groupThreadId    : SV_GroupThreadID)\n{\n
       \   uint id = groupThreadId.x + groupId.x * NB_THREADS_PER_GROUP;\n#if !VFX_USE_SPAWNER_FROM_GPU\n
@@ -1210,20 +1214,21 @@ VisualEffectResource:
       \           }\n        }\n        */\n        \n\n#endif\n        float3 velocity
       = float3(0,0,0);\n        uint seed = (uint)0;\n        float lifetime = (float)0;\n
       \       float size = (float)0.1;\n        float3 color = float3(1,1,1);\n        float3
-      position = float3(0,0,0);\n        float3 direction = float3(0,0,1);\n        float
+      direction = float3(0,0,1);\n        float3 position = float3(0,0,0);\n        float
       texIndex = (float)0;\n        bool alive = (bool)true;\n        float age =
       (float)0;\n        \n\n#if VFX_USE_PARTICLEID_CURRENT\n         particleId =
       particleIndex;\n#endif\n#if VFX_USE_SEED_CURRENT\n        seed = WangHash(particleIndex
       ^ systemSeed);\n#endif\n        \n        SetAttribute_E6295C0( /*inout */velocity,
       \ /*inout */seed, Min_a, Max_a);\n        SetAttribute_F01429A3( /*inout */lifetime,
       \ /*inout */seed, Min_b, Max_b);\n        SetAttribute_3278B22F( /*inout */size,
-      Size_c);\n        SetAttribute_FDD06EC7( /*inout */color, Color_d);\n        {\n
-      \           PositionCircle_18D( /*inout */position,  /*inout */seed,  /*inout
-      */direction, ArcCircle_circle_center_e, ArcCircle_circle_radius_e, ArcCircle_arc_e,
-      (float)0);\n        }\n        \n\n\n#if VFX_USE_ALIVE_CURRENT\n        if (alive)\n
-      \       {\n\t\t\tuint deadIndex = deadListIn.DecrementCounter();\n            uint
-      index = deadListIn[deadIndex];\n            attributeBuffer.Store3((index *
-      0x4 + 0x0) << 2,asuint(velocity));\n            attributeBuffer.Store((index
+      Size_c);\n        SetAttribute_FDD06EC7( /*inout */color, Color_d);\n        VelocitySpeed_18C(
+      /*inout */velocity, direction,  /*inout */seed, MinSpeed_e, MaxSpeed_e);\n        {\n
+      \           PositionCircle_18C( /*inout */position,  /*inout */seed,  /*inout
+      */direction, ArcCircle_circle_center_f, ArcCircle_circle_radius_f, ArcCircle_arc_f,
+      ArcSequencer_f, (float)0);\n        }\n        \n\n\n#if VFX_USE_ALIVE_CURRENT\n
+      \       if (alive)\n        {\n\t\t\tuint deadIndex = deadListIn.DecrementCounter();\n
+      \           uint index = deadListIn[deadIndex];\n            attributeBuffer.Store3((index
+      * 0x4 + 0x0) << 2,asuint(velocity));\n            attributeBuffer.Store((index
       * 0x1 + 0x800) << 2,asuint(lifetime));\n            attributeBuffer.Store((index
       * 0x4 + 0xA03) << 2,asuint(size));\n            attributeBuffer.Store3((index
       * 0x4 + 0xA00) << 2,asuint(color));\n            attributeBuffer.Store3((index
@@ -1610,18 +1615,18 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 52
-        valueIndex: 9
-        data[0]: 0
-        data[1]: -1
-        data[2]: -1
-        data[3]: -1
       - op: 1
-        valueIndex: 10
+        valueIndex: 9
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
+      - op: 52
+        valueIndex: 10
+        data[0]: 0
+        data[1]: -1
+        data[2]: -1
+        data[3]: -1
       - op: 1
         valueIndex: 11
         data[0]: -1
@@ -1633,61 +1638,61 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 13
-      - op: 3
+        data[3]: 1
+      - op: 1
         valueIndex: 13
-        data[0]: 4
-        data[1]: 2
-        data[2]: 7
-        data[3]: -1
-      - op: 3
-        valueIndex: 16
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 13
+      - op: 26
+        valueIndex: 14
         data[0]: 10
-        data[1]: 11
-        data[2]: 6
-        data[3]: -1
+        data[1]: 1
+        data[2]: -1
+        data[3]: 1
       - op: 1
-        valueIndex: 19
+        valueIndex: 15
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 1
-        valueIndex: 20
+        valueIndex: 16
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 3
-        valueIndex: 21
+        valueIndex: 17
         data[0]: 5
-        data[1]: 1
+        data[1]: 4
+        data[2]: 8
+        data[3]: -1
+      - op: 3
+        valueIndex: 20
+        data[0]: 11
+        data[1]: 2
         data[2]: 3
         data[3]: -1
+      - op: 1
+        valueIndex: 23
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 24
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 1
+      - op: 3
         valueIndex: 25
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 26
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 27
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
+        data[0]: 6
+        data[1]: 7
+        data[2]: 9
+        data[3]: -1
       - op: 1
         valueIndex: 28
         data[0]: -1
@@ -1706,10 +1711,10 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 26
+      - op: 1
         valueIndex: 31
-        data[0]: 9
-        data[1]: 8
+        data[0]: -1
+        data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 1
@@ -1729,103 +1734,103 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 13
+        data[3]: 1
       - op: 1
         valueIndex: 35
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 29
-        valueIndex: 36
-        data[0]: 14
-        data[1]: 13
-        data[2]: 17
-        data[3]: -1
       - op: 26
-        valueIndex: 52
-        data[0]: 23
-        data[1]: 24
+        valueIndex: 36
+        data[0]: 15
+        data[1]: 28
         data[2]: -1
         data[3]: 1
+      - op: 25
+        valueIndex: 37
+        data[0]: 14
+        data[1]: 16
+        data[2]: -1
+        data[3]: 1
+      - op: 26
+        valueIndex: 38
+        data[0]: 27
+        data[1]: 28
+        data[2]: -1
+        data[3]: 1
+      - op: 29
+        valueIndex: 39
+        data[0]: 17
+        data[1]: 18
+        data[2]: 21
+        data[3]: -1
       - op: 1
-        valueIndex: 53
+        valueIndex: 55
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 2
       - op: 26
-        valueIndex: 55
-        data[0]: 26
-        data[1]: 24
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 56
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
         valueIndex: 57
-        data[0]: -1
-        data[1]: -1
+        data[0]: 19
+        data[1]: 28
         data[2]: -1
-        data[3]: 14
+        data[3]: 1
       - op: 1
         valueIndex: 58
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 10
+      - op: 1
         valueIndex: 59
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 13
+      - op: 1
+        valueIndex: 60
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 10
+        valueIndex: 61
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: -1
       - op: 3
-        valueIndex: 75
-        data[0]: 22
-        data[1]: 21
-        data[2]: 20
+        valueIndex: 77
+        data[0]: 25
+        data[1]: 24
+        data[2]: 23
         data[3]: -1
-      - op: 1
-        valueIndex: 78
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 79
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
       - op: 1
         valueIndex: 80
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 2
+      - op: 1
         valueIndex: 81
-        data[0]: 18
-        data[1]: 19
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 82
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 2
+        valueIndex: 83
+        data[0]: 20
+        data[1]: 22
         data[2]: -1
         data[3]: -1
-      - op: 1
-        valueIndex: 83
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 84
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
       - op: 1
         valueIndex: 85
         data[0]: -1
@@ -1844,10 +1849,10 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 26
+      - op: 1
         valueIndex: 88
-        data[0]: 16
-        data[1]: 15
+        data[0]: -1
+        data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 1
@@ -1856,10 +1861,10 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 1
+      - op: 26
         valueIndex: 90
-        data[0]: -1
-        data[1]: -1
+        data[0]: 12
+        data[1]: 26
         data[2]: -1
         data[3]: 1
       - op: 1
@@ -1868,137 +1873,149 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 44
+      - op: 1
         valueIndex: 92
-        data[0]: 12
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 93
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 44
+        valueIndex: 94
+        data[0]: 13
         data[1]: -1
         data[2]: -1
         data[3]: 0
-      - op: 1
-        valueIndex: 96
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 97
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
       - op: 1
         valueIndex: 98
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
+        data[3]: 14
       - op: 1
         valueIndex: 99
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 25
+      - op: 1
         valueIndex: 100
-        data[0]: 25
-        data[1]: 27
-        data[2]: -1
-        data[3]: 1
-      - op: 45
-        valueIndex: 101
-        data[0]: 35
+        data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 0
-      - op: 22
+        data[3]: 1
+      - op: 1
+        valueIndex: 101
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
         valueIndex: 102
-        data[0]: 8
-        data[1]: 48
+        data[0]: -1
+        data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 44
         valueIndex: 103
-        data[0]: 28
+        data[0]: 37
         data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 22
         valueIndex: 107
-        data[0]: 32
-        data[1]: 42
+        data[0]: 1
+        data[1]: 50
+        data[2]: -1
+        data[3]: 1
+      - op: 45
+        valueIndex: 108
+        data[0]: 55
+        data[1]: -1
+        data[2]: -1
+        data[3]: 0
+      - op: 54
+        valueIndex: 109
+        data[0]: 31
+        data[1]: -1
+        data[2]: -1
+        data[3]: -1
+      - op: 22
+        valueIndex: 110
+        data[0]: 34
+        data[1]: 44
         data[2]: -1
         data[3]: 2
       - op: 26
-        valueIndex: 109
-        data[0]: 36
-        data[1]: 24
+        valueIndex: 112
+        data[0]: 38
+        data[1]: 28
         data[2]: -1
         data[3]: 1
-      - op: 26
-        valueIndex: 110
-        data[0]: 53
-        data[1]: 24
+      - op: 1
+        valueIndex: 113
+        data[0]: -1
+        data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 35
-        valueIndex: 111
-        data[0]: 37
-        data[1]: 38
-        data[2]: -1
-        data[3]: -1
-      - op: 3
         valueIndex: 114
         data[0]: 39
         data[1]: 40
-        data[2]: 41
+        data[2]: -1
+        data[3]: -1
+      - op: 3
+        valueIndex: 117
+        data[0]: 41
+        data[1]: 42
+        data[2]: 43
         data[3]: -1
       - op: 1
-        valueIndex: 117
+        valueIndex: 120
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 7
       - op: 3
-        valueIndex: 119
-        data[0]: 43
-        data[1]: 44
-        data[2]: 45
-        data[3]: -1
-      - op: 3
         valueIndex: 122
-        data[0]: 47
+        data[0]: 45
         data[1]: 46
-        data[2]: 56
+        data[2]: 47
         data[3]: -1
-      - op: 1
-        valueIndex: 125
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 126
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 127
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
       - op: 3
-        valueIndex: 128
-        data[0]: 49
-        data[1]: 50
-        data[2]: 51
+        valueIndex: 125
+        data[0]: 48
+        data[1]: 49
+        data[2]: 58
         data[3]: -1
+      - op: 1
+        valueIndex: 128
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 129
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 130
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 3
         valueIndex: 131
-        data[0]: 34
-        data[1]: 54
-        data[2]: 55
+        data[0]: 51
+        data[1]: 52
+        data[2]: 53
         data[3]: -1
       - op: 1
         valueIndex: 134
@@ -2006,50 +2023,68 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 1
-      - op: 25
+      - op: 1
         valueIndex: 135
-        data[0]: 33
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 3
+        valueIndex: 136
+        data[0]: 36
+        data[1]: 56
+        data[2]: 57
+        data[3]: -1
+      - op: 1
+        valueIndex: 139
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 25
+        valueIndex: 140
+        data[0]: 35
         data[1]: 29
         data[2]: -1
         data[3]: 1
+      - op: 25
+        valueIndex: 141
+        data[0]: 30
+        data[1]: 1
+        data[2]: -1
+        data[3]: 1
       - op: 1
-        valueIndex: 136
+        valueIndex: 142
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 1
       - op: 6
-        valueIndex: 137
+        valueIndex: 143
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: -1
       - op: 30
-        valueIndex: 138
-        data[0]: 30
+        valueIndex: 144
+        data[0]: 33
         data[1]: -1
         data[2]: -1
         data[3]: -1
       - op: 25
-        valueIndex: 154
-        data[0]: 31
-        data[1]: 8
+        valueIndex: 160
+        data[0]: 32
+        data[1]: 1
+        data[2]: -1
+        data[3]: 1
+      - op: 26
+        valueIndex: 161
+        data[0]: 59
+        data[1]: 28
         data[2]: -1
         data[3]: 1
       - op: 1
-        valueIndex: 155
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 54
-        valueIndex: 156
-        data[0]: 57
-        data[1]: -1
-        data[2]: -1
-        data[3]: -1
-      - op: 1
-        valueIndex: 157
+        valueIndex: 162
         data[0]: -1
         data[1]: -1
         data[2]: -1
@@ -2064,94 +2099,100 @@ VisualEffectResource:
         - m_ExpressionIndex: 2
           m_Value: 0
         - m_ExpressionIndex: 3
-          m_Value: 1
+          m_Value: 0
         - m_ExpressionIndex: 4
           m_Value: 0
         - m_ExpressionIndex: 5
-          m_Value: 1
+          m_Value: 0
         - m_ExpressionIndex: 6
-          m_Value: 0
-        - m_ExpressionIndex: 7
-          m_Value: 0
-        - m_ExpressionIndex: 8
           m_Value: 1
-        - m_ExpressionIndex: 10
+        - m_ExpressionIndex: 7
+          m_Value: 1
+        - m_ExpressionIndex: 8
           m_Value: 0
+        - m_ExpressionIndex: 9
+          m_Value: 1
         - m_ExpressionIndex: 11
           m_Value: 0
+        - m_ExpressionIndex: 12
+          m_Value: 1
         - m_ExpressionIndex: 15
-          m_Value: 0.001
+          m_Value: 0
         - m_ExpressionIndex: 16
-          m_Value: 1
-        - m_ExpressionIndex: 18
-          m_Value: 8
+          m_Value: 10
         - m_ExpressionIndex: 19
-          m_Value: 8
+          m_Value: 6.2831855
         - m_ExpressionIndex: 20
-          m_Value: 0
-        - m_ExpressionIndex: 21
-          m_Value: 1
+          m_Value: 8
         - m_ExpressionIndex: 22
-          m_Value: 0
+          m_Value: 8
         - m_ExpressionIndex: 23
-          m_Value: 0.5
+          m_Value: 0
         - m_ExpressionIndex: 24
+          m_Value: 1
+        - m_ExpressionIndex: 25
           m_Value: 0
         - m_ExpressionIndex: 26
-          m_Value: 6.2566395
+          m_Value: 0.001
         - m_ExpressionIndex: 27
-          m_Value: 10
+          m_Value: 0.8352738
+        - m_ExpressionIndex: 28
+          m_Value: 0
         - m_ExpressionIndex: 29
           m_Value: 6.2831855
-        - m_ExpressionIndex: 34
-          m_Value: 0.73976517
         - m_ExpressionIndex: 36
+          m_Value: 0.73976517
+        - m_ExpressionIndex: 38
           m_Value: 50
-        - m_ExpressionIndex: 39
-          m_Value: 10
-        - m_ExpressionIndex: 40
-          m_Value: 10
         - m_ExpressionIndex: 41
           m_Value: 10
+        - m_ExpressionIndex: 42
+          m_Value: 10
         - m_ExpressionIndex: 43
-          m_Value: -0.15
-        - m_ExpressionIndex: 44
-          m_Value: 0.8
+          m_Value: 10
         - m_ExpressionIndex: 45
           m_Value: -0.15
         - m_ExpressionIndex: 46
-          m_Value: 1
+          m_Value: 0.8
         - m_ExpressionIndex: 47
+          m_Value: -0.15
+        - m_ExpressionIndex: 48
           m_Value: 0.15
         - m_ExpressionIndex: 49
           m_Value: 1
-        - m_ExpressionIndex: 50
-          m_Value: 1
         - m_ExpressionIndex: 51
           m_Value: 1
+        - m_ExpressionIndex: 52
+          m_Value: 1
         - m_ExpressionIndex: 53
-          m_Value: 0.02
-        - m_ExpressionIndex: 54
-          m_Value: 0
-        - m_ExpressionIndex: 55
-          m_Value: 0
+          m_Value: 1
         - m_ExpressionIndex: 56
+          m_Value: 0.7
+        - m_ExpressionIndex: 57
+          m_Value: 0.7
+        - m_ExpressionIndex: 58
           m_Value: 0.15
-        - m_ExpressionIndex: 69
-          m_Value: 10
-        - m_ExpressionIndex: 70
+        - m_ExpressionIndex: 59
+          m_Value: 0.02
+        - m_ExpressionIndex: 66
           m_Value: 15
-        - m_ExpressionIndex: 71
-          m_Value: 5
+        - m_ExpressionIndex: 72
+          m_Value: 10
+        - m_ExpressionIndex: 73
+          m_Value: 20
         - m_ExpressionIndex: 74
-          m_Value: 1.6173773
+          m_Value: 2
         - m_ExpressionIndex: 76
+          m_Value: 0.5
+        - m_ExpressionIndex: 77
+          m_Value: 4
+        - m_ExpressionIndex: 79
+          m_Value: 3.018112
+        - m_ExpressionIndex: 82
           m_Value: 24
-        - m_ExpressionIndex: 80
-          m_Value: 11
       m_Vector2f:
         m_Array:
-        - m_ExpressionIndex: 32
+        - m_ExpressionIndex: 34
           m_Value: {x: 1, y: 1}
       m_Vector3f:
         m_Array: []
@@ -2167,7 +2208,7 @@ VisualEffectResource:
         m_Array: []
       m_AnimationCurve:
         m_Array:
-        - m_ExpressionIndex: 12
+        - m_ExpressionIndex: 13
           m_Value:
             serializedVersion: 2
             m_Curve:
@@ -2192,22 +2233,22 @@ VisualEffectResource:
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 4
-        - m_ExpressionIndex: 28
+        - m_ExpressionIndex: 37
           m_Value:
             serializedVersion: 2
             m_Curve:
             - serializedVersion: 3
-              time: 0.0037403274
-              value: 0.36034077
-              inSlope: 0.12380051
-              outSlope: 0.12380051
+              time: -1.2868594
+              value: -0.74381876
+              inSlope: 1.1396648
+              outSlope: 1.1396648
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
               outWeight: 0
             - serializedVersion: 3
-              time: 5.379751
-              value: 28.867214
+              time: 5.7137275
+              value: 20.346802
               inSlope: 6.557065
               outSlope: 6.557065
               tangentMode: 0
@@ -2219,7 +2260,7 @@ VisualEffectResource:
             m_RotationOrder: 4
       m_Gradient:
         m_Array:
-        - m_ExpressionIndex: 35
+        - m_ExpressionIndex: 55
           m_Value:
             serializedVersion: 2
             key0: {r: 0.6981132, g: 0.6734158, b: 0.6487184, a: 0.43529412}
@@ -2230,18 +2271,18 @@ VisualEffectResource:
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
-            ctime0: 24672
-            ctime1: 46646
+            ctime0: 23130
+            ctime1: 38936
             ctime2: 65535
             ctime3: 0
             ctime4: 0
             ctime5: 0
             ctime6: 0
             ctime7: 0
-            atime0: 0
-            atime1: 20624
-            atime2: 30069
-            atime3: 39514
+            atime0: 4626
+            atime1: 15035
+            atime2: 33731
+            atime3: 45104
             atime4: 65535
             atime5: 0
             atime6: 0
@@ -2251,15 +2292,15 @@ VisualEffectResource:
             m_NumAlphaKeys: 5
       m_NamedObject:
         m_Array:
-        - m_ExpressionIndex: 66
+        - m_ExpressionIndex: 69
           m_Value: {fileID: 2800000, guid: 276d9e395ae18fe40a9b4988549f2349, type: 3}
-        - m_ExpressionIndex: 82
+        - m_ExpressionIndex: 87
           m_Value: {fileID: 2800000, guid: 76e25da1cefc7f446bcc43a70fb13a0f, type: 3}
       m_Bool:
         m_Array: []
     m_ExposedExpressions:
     - nameId: Color
-      index: 66
+      index: 69
     m_Buffers:
     - type: 1
       size: 8608
@@ -2441,7 +2482,7 @@ VisualEffectResource:
       buffers: []
       values:
       - nameId: Rate
-        index: 62
+        index: 65
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: -1
@@ -2462,9 +2503,9 @@ VisualEffectResource:
       index: 1
     values:
     - nameId: bounds_center
-      index: 64
+      index: 67
     - nameId: bounds_size
-      index: 65
+      index: 68
     tasks:
     - type: 536870912
       buffers:
@@ -2478,28 +2519,34 @@ VisualEffectResource:
         index: 2
       values:
       - nameId: Min_a
-        index: 67
-      - nameId: Max_a
-        index: 68
-      - nameId: Min_b
-        index: 69
-      - nameId: Max_b
         index: 70
-      - nameId: Size_c
+      - nameId: Max_a
         index: 71
-      - nameId: Color_d
+      - nameId: Min_b
         index: 72
-      - nameId: ArcCircle_circle_center_e
+      - nameId: Max_b
         index: 73
-      - nameId: ArcCircle_circle_radius_e
+      - nameId: Size_c
         index: 74
-      - nameId: ArcCircle_arc_e
+      - nameId: Color_d
         index: 75
+      - nameId: MinSpeed_e
+        index: 76
+      - nameId: MaxSpeed_e
+        index: 77
+      - nameId: ArcCircle_circle_center_f
+        index: 78
+      - nameId: ArcCircle_circle_radius_f
+        index: 79
+      - nameId: ArcCircle_arc_f
+        index: 80
+      - nameId: ArcSequencer_f
+        index: 81
       params:
       - nameId: bounds_center
-        index: 64
+        index: 67
       - nameId: bounds_size
-        index: 65
+        index: 68
       processor: {fileID: 0}
       shaderSourceIndex: 0
     - type: 805306368
@@ -2510,21 +2557,21 @@ VisualEffectResource:
         index: 3
       values:
       - nameId: FrameRate_a
-        index: 76
+        index: 82
       - nameId: deltaTime_a
-        index: 77
+        index: 83
       - nameId: InvFieldTransform_b
-        index: 78
+        index: 84
       - nameId: FieldTransform_b
-        index: 30
+        index: 33
       - nameId: Roughness_b
-        index: 79
+        index: 85
       - nameId: Intensity_b
-        index: 80
+        index: 66
       - nameId: Drag_b
-        index: 63
+        index: 86
       - nameId: octaves_b
-        index: 81
+        index: 63
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 1
@@ -2536,17 +2583,17 @@ VisualEffectResource:
       - nameId: Size_a
         index: 60
       - nameId: gradient_c
-        index: 58
+        index: 62
       - nameId: uniform_d
-        index: 52
+        index: 54
       - nameId: invSoftParticlesFadeDistance
-        index: 59
-      - nameId: flipBookSize
-        index: 42
-      - nameId: invFlipBookSize
         index: 61
+      - nameId: flipBookSize
+        index: 44
+      - nameId: invFlipBookSize
+        index: 64
       - nameId: mainTexture
-        index: 82
+        index: 87
       params:
       - nameId: sortPriority
         index: 0
@@ -2894,7 +2941,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -2956,7 +3003,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0037403274327516557,"value":0.36034077405929568,"inTangent":0.12380050867795944,"outTangent":0.12380050867795944,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":5.379751205444336,"value":28.86721420288086,"inTangent":6.557065010070801,"outTangent":6.557065010070801,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":-1.286859393119812,"value":-0.7438187599182129,"inTangent":1.1396647691726685,"outTangent":1.1396647691726685,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":5.7137274742126469,"value":20.3468017578125,"inTangent":6.557065010070801,"outTangent":6.557065010070801,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -3284,10 +3331,10 @@ MonoBehaviour:
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
-  - {fileID: 8926484042661614590}
-  - {fileID: 8926484042661614591}
+  - {fileID: 8926484042661614650}
+  - {fileID: 8926484042661614651}
   m_OutputSlots: []
-  m_Disabled: 1
+  m_Disabled: 0
   composition: 1
   speedMode: 1
 --- !u!114 &8926484042661614587
@@ -3351,86 +3398,6 @@ MonoBehaviour:
   m_Direction: 0
   m_LinkedSlots:
   - {fileID: 8926484042661614607}
---- !u!114 &8926484042661614590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614590}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614583}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.2
-    m_Space: 2147483647
-  m_Property:
-    name: MinSpeed
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    attributes:
-    - m_Type: 3
-      m_Min: -Infinity
-      m_Max: Infinity
-      m_Tooltip: The minimum speed to compute for the particles, in the new direction.
-      m_Regex: 
-      m_RegexMaxLength: 0
-  m_Direction: 0
-  m_LinkedSlots: []
---- !u!114 &8926484042661614591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614591}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614583}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
-    m_Space: 2147483647
-  m_Property:
-    name: MaxSpeed
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    attributes:
-    - m_Type: 3
-      m_Min: -Infinity
-      m_Max: Infinity
-      m_Tooltip: The minimum speed to compute for the particles, in the new direction.
-      m_Regex: 
-      m_RegexMaxLength: 0
-  m_Direction: 0
-  m_LinkedSlots: []
 --- !u!114 &8926484042661614602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3959,7 +3926,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614632}
   - {fileID: 8926484042661614633}
   - {fileID: 8926484042661614634}
-  - {fileID: 8926484042661614635}
+  - {fileID: 8926484042661614648}
   m_OutputSlots: []
   m_Disabled: 0
   Mode: 1
@@ -4499,7 +4466,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
+      m_SerializableObject: 0.8352738
     m_Space: 2147483647
   m_Property:
     name: Roughness
@@ -4545,7 +4512,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 11
+      m_SerializableObject: 15
     m_Space: 2147483647
   m_Property:
     name: Intensity
@@ -4557,53 +4524,6 @@ MonoBehaviour:
       m_Min: -Infinity
       m_Max: Infinity
       m_Tooltip: Intensity of the motion vectors
-      m_Regex: 
-      m_RegexMaxLength: 0
-  m_Direction: 0
-  m_LinkedSlots: []
---- !u!114 &8926484042661614635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614635}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614618}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.02
-    m_Space: 2147483647
-  m_Property:
-    name: Drag
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    attributes:
-    - m_Type: 1
-      m_Min: 0
-      m_Max: Infinity
-      m_Tooltip: 
-      m_Regex: 
-      m_RegexMaxLength: 0
-    - m_Type: 3
-      m_Min: -Infinity
-      m_Max: Infinity
-      m_Tooltip: Drag coefficient. The higher the drag, the more the force will have
-        influence over the particle velocity
       m_Regex: 
       m_RegexMaxLength: 0
   m_Direction: 0
@@ -4627,10 +4547,11 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614637}
+  - {fileID: 8926484042661614652}
   m_OutputSlots: []
   m_Disabled: 0
   positionMode: 1
-  spawnMode: 0
+  spawnMode: 1
 --- !u!114 &8926484042661614637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4657,7 +4578,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.ArcCircle, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"circle":{"center":{"x":0.7397651672363281,"y":0.0,"z":0.0},"radius":1.6173772811889649},"arc":6.25663948059082}'
+      m_SerializableObject: '{"circle":{"center":{"x":0.7397651672363281,"y":0.699999988079071,"z":0.699999988079071},"radius":3.0181119441986086},"arc":6.2831854820251469}'
     m_Space: 0
   m_Property:
     name: ArcCircle
@@ -4935,6 +4856,180 @@ MonoBehaviour:
       m_Min: -Infinity
       m_Max: Infinity
       m_Tooltip: Controls how much of the circle is used.
+      m_Regex: 
+      m_RegexMaxLength: 0
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661614648}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614618}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.02
+    m_Space: 2147483647
+  m_Property:
+    name: Drag
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    attributes:
+    - m_Type: 1
+      m_Min: 0
+      m_Max: Infinity
+      m_Tooltip: 
+      m_Regex: 
+      m_RegexMaxLength: 0
+    - m_Type: 3
+      m_Min: -Infinity
+      m_Max: Infinity
+      m_Tooltip: Drag coefficient. The higher the drag, the more the force will have
+        influence over the particle velocity
+      m_Regex: 
+      m_RegexMaxLength: 0
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661614650}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614583}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.5
+    m_Space: 2147483647
+  m_Property:
+    name: MinSpeed
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    attributes:
+    - m_Type: 3
+      m_Min: -Infinity
+      m_Max: Infinity
+      m_Tooltip: The minimum speed to compute for the particles, in the new direction.
+      m_Regex: 
+      m_RegexMaxLength: 0
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661614651}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614583}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 4
+    m_Space: 2147483647
+  m_Property:
+    name: MaxSpeed
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    attributes:
+    - m_Type: 3
+      m_Min: -Infinity
+      m_Max: Infinity
+      m_Tooltip: The minimum speed to compute for the particles, in the new direction.
+      m_Regex: 
+      m_RegexMaxLength: 0
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661614652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661614652}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614636}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0
+    m_Space: 2147483647
+  m_Property:
+    name: ArcSequencer
+    m_serializedType:
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    attributes:
+    - m_Type: 0
+      m_Min: 0
+      m_Max: 1
+      m_Tooltip: 
+      m_Regex: 
+      m_RegexMaxLength: 0
+    - m_Type: 3
+      m_Min: -Infinity
+      m_Max: Infinity
+      m_Tooltip: When using customized emission, control the position around the arc
+        to emit particles from.
       m_Regex: 
       m_RegexMaxLength: 0
   m_Direction: 0
