@@ -259,7 +259,11 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+<<<<<<< HEAD
       m_SerializableObject: '{"center":{"x":0.0,"y":1.0,"z":0.0},"size":{"x":2.0,"y":3.0,"z":2.0}}'
+=======
+      m_SerializableObject: '{"center":{"x":0.0,"y":1.0,"z":0.0},"size":{"x":5.0,"y":5.0,"z":5.0}}'
+>>>>>>> 461f1aff0f51e5aa44063a3223331e3f53695e95
     m_Space: 0
   m_Property:
     name: bounds
@@ -1267,9 +1271,9 @@ VisualEffectResource:
       * 0x3 + 0x16141) << 2));\n\t\t\t\n\n\t\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\t\toldPosition
       = position;\n#endif\n\t\t\t\n\t\t\t{\n\t\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t\t}\n\t\t\t{\n\t\t\t    CollisionPlane_0( /*inout
-      */position,  /*inout */velocity,  /*inout */age, lifetime, float3(6.068328,5.681937E-06,2.394568E-07),
+      */position,  /*inout */velocity,  /*inout */age, lifetime, float3(0,0,-1.384755),
       float3(-0.6647728,0.07145014,-0.7436209), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,-4.03406));\n\t\t\t}\n\t\t\tEulerIntegration(
+      (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,1.029733));\n\t\t\t}\n\t\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\t\tAge( /*inout */age, deltaTime_a);\n\t\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\t\n\n\t\t\tif (alive)\n\t\t\t{\n\t\t\t\tattributeBuffer.Store3((index
       * 0x4 + 0x0) << 2,asuint(velocity));\n\t\t\t\tattributeBuffer.Store((index *
@@ -1288,9 +1292,8 @@ VisualEffectResource:
       + 0x16142) << 2));\n\t\t\n\n\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\toldPosition
       = position;\n#endif\n\t\t\n\t\t{\n\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t}\n\t\t{\n\t\t    CollisionPlane_0( /*inout */position,
-      \ /*inout */velocity,  /*inout */age, lifetime, float3(6.068328,5.681937E-06,2.394568E-07),
-      float3(-0.6647728,0.07145014,-0.7436209), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,-4.03406));\n\t\t}\n\t\tEulerIntegration(
+      \ /*inout */velocity,  /*inout */age, lifetime, float3(0,0,-1.384755), float3(-0.6647728,0.07145014,-0.7436209),
+      (float)0.1, (float)0, (float)0, deltaTime_a, (float)1, (float)0, float4(-0.6647728,0.07145014,-0.7436209,1.029733));\n\t\t}\n\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\tAge( /*inout */age, deltaTime_a);\n\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\n\n\t\tattributeBuffer.Store3((index * 0x4
       + 0x0) << 2,asuint(velocity));\n\t\tattributeBuffer.Store((index * 0x3 + 0x16140)
@@ -1482,6 +1485,7 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 14
+<<<<<<< HEAD
       - op: 1
         valueIndex: 1
         data[0]: -1
@@ -1489,6 +1493,15 @@ VisualEffectResource:
         data[2]: -1
         data[3]: 13
       - op: 1
+=======
+      - op: 1
+        valueIndex: 1
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 13
+      - op: 1
+>>>>>>> 461f1aff0f51e5aa44063a3223331e3f53695e95
         valueIndex: 2
         data[0]: -1
         data[1]: -1
@@ -1716,7 +1729,11 @@ VisualEffectResource:
         - m_ExpressionIndex: 18
           m_Value: {x: 0, y: 1, z: 0}
         - m_ExpressionIndex: 19
+<<<<<<< HEAD
           m_Value: {x: 2, y: 3, z: 2}
+=======
+          m_Value: {x: 5, y: 5, z: 5}
+>>>>>>> 461f1aff0f51e5aa44063a3223331e3f53695e95
         - m_ExpressionIndex: 21
           m_Value: {x: -0.333, y: 0.2, z: -0.333}
         - m_ExpressionIndex: 22
@@ -1724,13 +1741,21 @@ VisualEffectResource:
         - m_ExpressionIndex: 26
           m_Value: {x: 1, y: 1, z: 1}
         - m_ExpressionIndex: 30
+<<<<<<< HEAD
           m_Value: {x: 6.0683284, y: 0.000005681937, z: 0.00000023945682}
+=======
+          m_Value: {x: 0, y: 0, z: -1.3847554}
+>>>>>>> 461f1aff0f51e5aa44063a3223331e3f53695e95
         - m_ExpressionIndex: 31
           m_Value: {x: -0.6647728, y: 0.071450144, z: -0.7436209}
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 14
+<<<<<<< HEAD
           m_Value: {x: -0.6647728, y: 0.071450144, z: -0.7436209, w: -4.0340595}
+=======
+          m_Value: {x: -0.6647728, y: 0.071450144, z: -0.7436209, w: 1.029733}
+>>>>>>> 461f1aff0f51e5aa44063a3223331e3f53695e95
       m_Uint:
         m_Array: []
       m_Int:
@@ -3125,7 +3150,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614605}
   - {fileID: 8926484042661614609}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614604}
   m_MasterData:
@@ -3134,7 +3159,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Plane, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":6.068328380584717,"y":0.000005681937182089314,"z":2.3945682414705518e-7},"normal":{"x":-0.6647728085517883,"y":0.0714501440525055,"z":-0.7436208724975586}}'
+      m_SerializableObject: '{"position":{"x":0.0,"y":0.0,"z":-1.3847553730010987},"normal":{"x":-0.6647728085517883,"y":0.0714501440525055,"z":-0.7436208724975586}}'
     m_Space: 0
   m_Property:
     name: Plane
