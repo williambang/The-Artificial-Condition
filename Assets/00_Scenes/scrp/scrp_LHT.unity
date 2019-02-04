@@ -332,55 +332,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &548776484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 548776486}
-  - component: {fileID: 548776485}
-  - component: {fileID: 548776491}
-  m_Layer: 0
-  m_Name: atmosphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &548776485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548776484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 16d20c28c034c6a4f829f6ee168077fa, type: 2}
---- !u!4 &548776486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548776484}
-  m_LocalRotation: {x: 0.017176714, y: -0, z: -0, w: 0.99985254}
-  m_LocalPosition: {x: -8.6, y: 4.64, z: 10.77}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 1.968, y: 0, z: 0}
 --- !u!108 &548776487
 Light:
   m_ObjectHideFlags: 0
@@ -427,39 +378,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070889742}
   m_LocalRotation: {x: -0.71466583, y: -0.46805826, z: -0.23946732, w: -0.46133474}
-  m_LocalPosition: {x: -10.3167305, y: 0.67210746, z: -8.584878}
+  m_LocalPosition: {x: -10.3167305, y: 3.04, z: -8.584878}
   m_LocalScale: {x: -1.1772002, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465297536}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.8, y: 120.7, z: -261.3}
---- !u!114 &548776491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548776484}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fbb15bf92b84f40a1eb030765b5afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  parameters:
-    albedo: {r: 1, g: 1, b: 1, a: 1}
-    meanFreePath: 17.39
-    asymmetry: 0
-    volumeMask: {fileID: 0}
-    textureScrollingSpeed: {x: 0, y: 0, z: 0}
-    textureTiling: {x: 1, y: 1, z: 1}
-    m_PositiveFade: {x: 0, y: 0, z: 0}
-    m_NegativeFade: {x: 0, y: 0, z: 0}
-    m_UniformFade: 0
-    size: {x: 22.37, y: 9, z: 2.92}
-    advancedFade: 1
-    invertFade: 0
-    textureIndex: -1
 --- !u!1 &890596271
 GameObject:
   m_ObjectHideFlags: 0
