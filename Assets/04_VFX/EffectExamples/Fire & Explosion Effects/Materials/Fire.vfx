@@ -1267,9 +1267,9 @@ VisualEffectResource:
       * 0x3 + 0x16141) << 2));\n\t\t\t\n\n\t\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\t\toldPosition
       = position;\n#endif\n\t\t\t\n\t\t\t{\n\t\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t\t}\n\t\t\t{\n\t\t\t    CollisionPlane_0( /*inout
-      */position,  /*inout */velocity,  /*inout */age, lifetime, float3(1.387673,2.763196E-06,4.947171),
-      float3(-0.5534364,0.2717972,-0.7872957), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.5534364,0.2717972,-0.7872957,-4.662874));\n\t\t\t}\n\t\t\tEulerIntegration(
+      */position,  /*inout */velocity,  /*inout */age, lifetime, float3(1.387675,1.256329,5.214426),
+      float3(-0.5037308,0.4347915,-0.7464661), (float)0.1, (float)0, (float)0, deltaTime_a,
+      (float)1, (float)0, float4(-0.5037308,0.4347915,-0.7464661,-4.045166));\n\t\t\t}\n\t\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\t\tAge( /*inout */age, deltaTime_a);\n\t\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\t\n\n\t\t\tif (alive)\n\t\t\t{\n\t\t\t\tattributeBuffer.Store3((index
       * 0x4 + 0x0) << 2,asuint(velocity));\n\t\t\t\tattributeBuffer.Store((index *
@@ -1288,9 +1288,9 @@ VisualEffectResource:
       + 0x16142) << 2));\n\t\t\n\n\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\toldPosition
       = position;\n#endif\n\t\t\n\t\t{\n\t\t    FlipbookPlay_0( /*inout */texIndex,
       (float)20, deltaTime_a);\n\t\t}\n\t\t{\n\t\t    CollisionPlane_0( /*inout */position,
-      \ /*inout */velocity,  /*inout */age, lifetime, float3(1.387673,2.763196E-06,4.947171),
-      float3(-0.5534364,0.2717972,-0.7872957), (float)0.1, (float)0, (float)0, deltaTime_a,
-      (float)1, (float)0, float4(-0.5534364,0.2717972,-0.7872957,-4.662874));\n\t\t}\n\t\tEulerIntegration(
+      \ /*inout */velocity,  /*inout */age, lifetime, float3(1.387675,1.256329,5.214426),
+      float3(-0.5037308,0.4347915,-0.7464661), (float)0.1, (float)0, (float)0, deltaTime_a,
+      (float)1, (float)0, float4(-0.5037308,0.4347915,-0.7464661,-4.045166));\n\t\t}\n\t\tEulerIntegration(
       /*inout */position, velocity, deltaTime_a);\n\t\tAge( /*inout */age, deltaTime_a);\n\t\tReap(age,
       lifetime,  /*inout */alive);\n\t\t\n\n\t\tattributeBuffer.Store3((index * 0x4
       + 0x0) << 2,asuint(velocity));\n\t\tattributeBuffer.Store((index * 0x3 + 0x16140)
@@ -1724,13 +1724,13 @@ VisualEffectResource:
         - m_ExpressionIndex: 26
           m_Value: {x: 1, y: 1, z: 1}
         - m_ExpressionIndex: 30
-          m_Value: {x: 1.3876733, y: 0.0000027631959, z: 4.9471707}
+          m_Value: {x: 1.3876748, y: 1.2563289, z: 5.2144256}
         - m_ExpressionIndex: 31
-          m_Value: {x: -0.5534364, y: 0.2717972, z: -0.7872957}
+          m_Value: {x: -0.5037308, y: 0.4347915, z: -0.7464661}
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 14
-          m_Value: {x: -0.5534364, y: 0.2717972, z: -0.7872957, w: -4.662874}
+          m_Value: {x: -0.5037308, y: 0.4347915, z: -0.7464661, w: -4.0451655}
       m_Uint:
         m_Array: []
       m_Int:
@@ -3134,7 +3134,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Plane, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":1.387673258781433,"y":0.0000027631958801066505,"z":4.947170734405518},"normal":{"x":-0.5534363985061646,"y":0.27179720997810366,"z":-0.7872956991195679}}'
+      m_SerializableObject: '{"position":{"x":1.3876748085021973,"y":1.2563289403915406,"z":5.214425563812256},"normal":{"x":-0.5037307739257813,"y":0.4347915053367615,"z":-0.7464661002159119}}'
     m_Space: 0
   m_Property:
     name: Plane
