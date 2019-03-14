@@ -115,7 +115,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   exposure:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   multiplier:
     m_OverrideState: 0
@@ -139,35 +139,35 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
+    m_OverrideState: 1
+    m_Value: 0.335
     min: 0
     max: 1
   sunSizeConvergence:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5
     min: 1
     max: 10
   atmosphereThickness:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 5
   skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.3316402, g: 0.22054112, b: 0.7924528, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   groundColor:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &114651823680524394
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
   m_Name: HDRISky
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   rotation:
     m_OverrideState: 1
     m_Value: 0
@@ -191,14 +191,14 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1
   multiplier:
     m_OverrideState: 0
     m_Value: 1
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 3.257072
+    m_Value: 1.467206
     min: 0
   desiredLuxValue:
     m_OverrideState: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: f7b439249e15ab34e9900b362070a836, type: 3}
+    m_Value: {fileID: 8900000, guid: 7a06714b28f5215418d2ea8699f673bb, type: 3}
 --- !u!114 &114782469599491954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -262,13 +262,13 @@ MonoBehaviour:
     min: 0
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.76561946, g: 0.8773585, b: 0.84031594, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 47.4
+    m_Value: 60
     min: 1
   baseHeight:
     m_OverrideState: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
     min: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: -0.46
+    m_Value: -0.15
     min: -1
     max: 1
   globalLightProbeDimmer:
