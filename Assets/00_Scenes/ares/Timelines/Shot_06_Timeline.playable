@@ -36,27 +36,6 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 999641a60b1366b40a9455ee53468d36
     defaultValue: {fileID: 0}
---- !u!114 &114220871276329812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: AnimationPlayableAsset
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 4f593c47ff57dce43976838db42fd9c8, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &114340787838914690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +125,27 @@ MonoBehaviour:
     m_DisplayName: CM vcam_06
     m_Version: 1
   m_Version: 2
+--- !u!114 &114524168299405456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400002, guid: 0e144fc4a9283b241b4cedc543f25699, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &114623268452625696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,10 +165,10 @@ MonoBehaviour:
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 0
+  - m_Start: 0.5
     m_ClipIn: 0
-    m_Asset: {fileID: 114220871276329812}
-    m_Duration: 2.4583333333333335
+    m_Asset: {fileID: 114524168299405456}
+    m_Duration: 1.125
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114623268452625696}
     m_EaseInDuration: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Looking
+    m_PreExtrapolationTime: 0.5
+    m_DisplayName: ares_aliveBuilding
     m_Version: 1
   m_Version: 2
   m_OpenClipPreExtrapolation: 0
