@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Grass_02_Mat
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _DISABLE_DBUFFER _DOUBLESIDED_ON _MASKMAP _MATERIAL_FEATURE_TRANSMISSION
@@ -154,6 +155,7 @@ Material:
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
+    - _AlphaCutoffShadow: 0.5
     - _AmbientOcclusion: 1
     - _AmbientOcclusionMapChannel: 0
     - _AmbientOcclusionMapShow: 0
@@ -304,6 +306,7 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PreRefractionPass: 0
+    - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
     - _SSSShow: 0
@@ -344,6 +347,7 @@ Material:
     - _SubsurfaceMaskMapUVLocal: 0
     - _SubsurfaceMaskUseMap: 0
     - _SupportDBuffer: 0
+    - _SupportDecals: 1
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
@@ -365,6 +369,7 @@ Material:
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
+    - _UseShadowThreshold: 0
     - _VlayerRecomputePerLight: 0
     - _VlayerUseRefractedAnglesForBase: 0
     - _ZTestDepthEqualForOpaque: 3
@@ -379,6 +384,7 @@ Material:
     - _AnisotropyMapRange: {r: 0, g: 1, b: 0, a: 0}
     - _AnisotropyMapRemap: {r: 0, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _CoatExtinction: {r: 1, g: 1, b: 1, a: 1}
     - _CoatSmoothnessMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
     - _CoatSmoothnessMapRange: {r: 0, g: 1, b: 0, a: 0}
