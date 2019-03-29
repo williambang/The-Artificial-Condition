@@ -18,6 +18,82 @@ MonoBehaviour:
   - {fileID: 114884667944525734}
   - {fileID: 114644053224125148}
   - {fileID: 114496524437822536}
+  - {fileID: 114082864617691214}
+  - {fileID: 114344192697944052}
+--- !u!114 &114082864617691214
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddcec8a8eb2d684d833ac8f5d26aebd, type: 3}
+  m_Name: HDShadowSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  maxShadowDistance:
+    m_OverrideState: 1
+    m_Value: 1046.1
+    min: 0
+  cascadeShadowSplitCount:
+    m_OverrideState: 1
+    m_Value: 4
+    min: 1
+    max: 4
+  cascadeShadowSplit0:
+    m_OverrideState: 1
+    m_Value: 0.05
+    min: 0
+    max: 1
+  cascadeShadowSplit1:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: 0
+    max: 1
+  cascadeShadowSplit2:
+    m_OverrideState: 1
+    m_Value: 0.3
+    min: 0
+    max: 1
+  cascadeShadowBorder0:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  cascadeShadowBorder1:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  cascadeShadowBorder2:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  cascadeShadowBorder3:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+--- !u!114 &114344192697944052
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b6af8f7ad32324cb6941c3290e5895, type: 3}
+  m_Name: MicroShadowing
+  m_EditorClassIdentifier: 
+  active: 1
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  opacity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
 --- !u!114 &114496524437822536
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -216,6 +292,50 @@ MonoBehaviour:
   hdriSky:
     m_OverrideState: 1
     m_Value: {fileID: 8900000, guid: 7a06714b28f5215418d2ea8699f673bb, type: 3}
+--- !u!114 &114775434927845780
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b145d2b9ee1ac4f846968484e7485a, type: 3}
+  m_Name: ContactShadows
+  m_EditorClassIdentifier: 
+  active: 1
+  enable:
+    m_OverrideState: 0
+    m_Value: 0
+  length:
+    m_OverrideState: 0
+    m_Value: 0.15
+    min: 0
+    max: 1
+  opacity:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  distanceScaleFactor:
+    m_OverrideState: 0
+    m_Value: 0.5
+    min: 0
+    max: 1
+  maxDistance:
+    m_OverrideState: 0
+    m_Value: 50
+    min: 0
+  fadeDistance:
+    m_OverrideState: 0
+    m_Value: 5
+    min: 0
+  sampleCount:
+    m_OverrideState: 0
+    m_Value: 8
+    min: 4
+    max: 64
 --- !u!114 &114782469599491954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -268,7 +388,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 60
+    m_Value: 150.21
     min: 1
   baseHeight:
     m_OverrideState: 1
@@ -279,7 +399,7 @@ MonoBehaviour:
     min: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: -0.47
+    m_Value: -0.24
     min: -1
     max: 1
   globalLightProbeDimmer:
