@@ -9,12 +9,12 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: headDistort
   m_Shader: {fileID: 4800000, guid: c4edd00ff2db5b24391a4fcb1762e459, type: 3}
-  m_ShaderKeywords: EFFECT_BUMP _ALPHABLEND_ON _BLENDMODE_ALPHA _DOUBLESIDED_ON _EMISSIVE_COLOR_MAP
-    _ENABLE_FOG_ON_TRANSPARENT _FADING_ON _NORMALMAP _REQUIRE_UV2 _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: EFFECT_BUMP _ALPHABLEND_ON _ALPHATEST_ON _BLENDMODE_ALPHA _DOUBLESIDED_ON
+    _ENABLE_FOG_ON_TRANSPARENT _FADING_ON _NORMALMAP_TANGENT_SPACE _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3100
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b96c69e599825d84e985962673d1679c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -51,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
-        m_Texture: {fileID: 2800000, guid: b7e9b138ba248a44f957941f56c3b0d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: b96c69e599825d84e985962673d1679c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
-        m_Texture: {fileID: 2800000, guid: b96c69e599825d84e985962673d1679c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
@@ -75,7 +75,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b96c69e599825d84e985962673d1679c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -123,8 +123,8 @@ Material:
     - _AORemapMin: 0
     - _ATDistance: 1
     - _AlbedoAffectEmissive: 0
-    - _AlphaCutoff: 0.5
-    - _AlphaCutoffEnable: 0
+    - _AlphaCutoff: 0.083
+    - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
     - _AlphaCutoffShadow: 0.5
@@ -140,7 +140,7 @@ Material:
     - _Cull: 2
     - _CullMode: 0
     - _CullModeForward: 0
-    - _Cutoff: 0.5
+    - _Cutoff: 0.083
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
     - _DetailNormalScale: 1
@@ -154,7 +154,7 @@ Material:
     - _DistortionBlurBlendMode: 0
     - _DistortionBlurDstBlend: 0
     - _DistortionBlurRemapMax: 1
-    - _DistortionBlurRemapMin: 0
+    - _DistortionBlurRemapMin: 1
     - _DistortionBlurScale: 1
     - _DistortionBlurSrcBlend: 7
     - _DistortionDepthTest: 1
@@ -166,8 +166,8 @@ Material:
     - _DistortionSrcBlend: 2
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
-    - _DistortionVectorBias: -1
-    - _DistortionVectorScale: 2
+    - _DistortionVectorBias: 2
+    - _DistortionVectorScale: 1
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 1
     - _Drag: 1
@@ -215,7 +215,7 @@ Material:
     - _SSRefractionProjectionModel: 0
     - _ShiverDirectionality: 0.5
     - _ShiverDrag: 0.2
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SoftParticlesEnabled: 1
@@ -240,13 +240,13 @@ Material:
     - _TransparentBackfaceEnable: 0
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: 100
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 4
-    - _ZTestGBuffer: 4
+    - _ZTestGBuffer: 3
     - _ZTestModeDistortion: 4
     - _ZWrite: 0
     m_Colors:
