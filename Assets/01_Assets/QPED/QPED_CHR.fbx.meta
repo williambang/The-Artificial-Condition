@@ -254,6 +254,11 @@ ModelImporter:
     100496: qped:r_solarPanelStage1_END_JNT
     100498: qped:r_solarPanelStage2_01_JNT
     100500: qped:r_solarPanelStage2_END_JNT
+    100502: qped:Flamehead_GEO
+    100504: qped:m_generator_01_JNT
+    100506: qped:m_generator_END_JNT
+    100508: qped:m_plow_01_JNT
+    100510: qped:m_plow_END_JNT
     400000: qped:b_AttachmentPistonAim01_JNT
     400002: qped:b_AttachmentPistonAim02_JNT
     400004: qped:b_ChainHeadPistonAim01_JNT
@@ -505,12 +510,23 @@ ModelImporter:
     400496: qped:r_solarPanelStage1_END_JNT
     400498: qped:r_solarPanelStage2_01_JNT
     400500: qped:r_solarPanelStage2_END_JNT
+    400502: qped:Flamehead_GEO
+    400504: qped:m_generator_01_JNT
+    400506: qped:m_generator_END_JNT
+    400508: qped:m_plow_01_JNT
+    400510: qped:m_plow_END_JNT
     2100000: qped_PanelMaterial
     2100002: qped_CoreMaterial
     2100004: qped_blinn5
     2100006: qped_SawHeadMaterial
     2100008: qped_PlowHeadMaterial
     2100010: qped_SolarPanels
+    2100012: qped_Panel_Material
+    2100014: qped_Core_Material
+    2100016: qped_Skeleton_Material
+    2100018: qped_FlameHeadSG3
+    2300000: qped:Flamehead_GEO
+    3300000: qped:Flamehead_GEO
     4300000: qped:Panels_GEO
     4300002: qped:Core_GEO
     4300004: qped:skeleton_GEO
@@ -577,6 +593,7 @@ ModelImporter:
     4300126: qped:l_SolarPanel_02
     4300128: qped:r_SolarPanel_01
     4300130: qped:r_SolarPanel_02
+    4300132: qped:Flamehead_GEO
     9500000: //RootNode
     13700000: qped:Core_GEO
     13700002: qped:Panels_GEO
@@ -644,7 +661,83 @@ ModelImporter:
     13700126: qped:r_SecondaryHinge_01
     13700128: qped:r_SolarPanel_01
     13700130: qped:r_SolarPanel_02
-  externalObjects: {}
+    13700132: qped:Flamehead_GEO
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_Core_Material
+    second: {fileID: 2100000, guid: e419bebd48b2c6947bcc63c04170b1ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_FlameHeadSG3
+    second: {fileID: 2100000, guid: 94b6786cd779e77418a8e6412182640e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_Panel_Material
+    second: {fileID: 2100000, guid: b16e5307495496741a9e83ee58d68f7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_PlowHeadMaterial
+    second: {fileID: 2100000, guid: 07ca8420001591148ad5a5dd593a8c92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_SawHeadMaterial
+    second: {fileID: 2100000, guid: f66e28270868f7747a88225fc5169d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_Skeleton_Material
+    second: {fileID: 2100000, guid: 73aa6df7fcc8ad340a2c3920d761f22e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qped_SolarPanels
+    second: {fileID: 2100000, guid: 0b469b35746a9814dbfe483b06024ff7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_Core_AlbedoTransparency
+    second: {fileID: 2800000, guid: ac25cfcbca6f2dd48b4dffeb87c0f92f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_Panels_AlbedoTransparency
+    second: {fileID: 2800000, guid: 880809a3232012647aa5004788b3fe86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_PlowHead_AlbedoTransparency
+    second: {fileID: 2800000, guid: f3f37e2c2d14443429c2c8740f1cb41d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_PlowHead_Normal
+    second: {fileID: 2800000, guid: d24c7223f76a0bd4ab958cd6d5b911f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_SawHead_AlbedoTransparency
+    second: {fileID: 2800000, guid: 698dd0f30b36e5140a58870c36e36b63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_Skeleton_AlbedoTransparency
+    second: {fileID: 2800000, guid: a18bd3be7f9e8a543969ce73ddcf2884, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_SolarPanel_BaseColor
+    second: {fileID: 2800000, guid: 9a45170e9f65f0947bcf07551d1657a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Moose_ForTexture_SolarPanel_MetallicSmoothness
+    second: {fileID: 2800000, guid: d59db48dcfa621f4abeea84d78b777bf, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
