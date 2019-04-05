@@ -10,20 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 337831424, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: theEnd_sh02_Timeline
+  m_Name: theEnd_sh05_Timeline
   m_EditorClassIdentifier: 
   m_NextId: 0
   m_Tracks:
   - {fileID: 114432542620465742}
-  - {fileID: 114472481244479506}
-  - {fileID: 114416756258092654}
-  - {fileID: 114345610366786182}
+  - {fileID: 114325700609252598}
+  - {fileID: 114272108187027490}
+  - {fileID: 114990814931416248}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
   m_DurationMode: 0
   m_Version: 0
---- !u!114 &114345610366786182
+--- !u!114 &114168475238777308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400000, guid: ee6cef818f75f1d469d20494db0d5b74, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_UseTrackMatchFields: 1
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+  m_ApplyFootIK: 1
+  m_Version: 1
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &114272108187027490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,7 +54,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: CAMERA
+  m_Name: LIGHTS
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
@@ -43,7 +64,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Version: 2
---- !u!114 &114416756258092654
+--- !u!114 &114325700609252598
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,14 +74,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: LIGHT
+  m_Name: CHARACTER
   m_EditorClassIdentifier: 
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
   m_Parent: {fileID: 11400000}
-  m_Children: []
+  m_Children:
+  - {fileID: 114550264774935700}
   m_Clips: []
   m_Version: 2
 --- !u!114 &114432542620465742
@@ -83,27 +105,6 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Version: 2
---- !u!114 &114472481244479506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: CHARACTER
-  m_EditorClassIdentifier: 
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children:
-  - {fileID: 114550264774935700}
-  m_Clips: []
-  m_Version: 2
 --- !u!114 &114550264774935700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,13 +121,13 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
-  m_Parent: {fileID: 114472481244479506}
+  m_Parent: {fileID: 114325700609252598}
   m_Children: []
   m_Clips:
   - m_Start: 0
-    m_ClipIn: 0
-    m_Asset: {fileID: 114573372314327380}
-    m_Duration: 6.208333333333333
+    m_ClipIn: 1.4333333333333322
+    m_Asset: {fileID: 114168475238777308}
+    m_Duration: 4.775000000000004
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114550264774935700}
     m_EaseInDuration: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &114573372314327380
+--- !u!114 &114990814931416248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,15 +219,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
-  m_Name: AnimationPlayableAsset
+  m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: CAMERA
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: ee6cef818f75f1d469d20494db0d5b74, type: 3}
-  m_Position: {x: 0, y: 0, z: 0}
-  m_EulerAngles: {x: 0, y: 0, z: 0}
-  m_UseTrackMatchFields: 1
-  m_MatchTargetFields: 63
-  m_RemoveStartOffset: 1
-  m_ApplyFootIK: 1
-  m_Version: 1
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Version: 2
