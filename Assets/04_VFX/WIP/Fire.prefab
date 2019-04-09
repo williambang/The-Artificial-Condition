@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 7210023068588240688}
   - component: {fileID: 695108821328046154}
   - component: {fileID: 6540243155771327352}
+  - component: {fileID: 5366487372039666042}
   m_Layer: 0
   m_Name: fire_light
   m_TagString: Untagged
@@ -272,3 +273,20 @@ MonoBehaviour:
     format: 0
     data: 
   shadowDatas: []
+--- !u!114 &5366487372039666042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334436653850181128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5d201c467a72c46b4abde8adcf3497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 0.01
+  maxOffset: 10
+  minOffset: 10
+  lht: {fileID: 7210023068588240688}
+  originalIntensity: 100
