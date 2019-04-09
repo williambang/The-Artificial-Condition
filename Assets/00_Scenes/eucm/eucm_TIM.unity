@@ -2265,8 +2265,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740304666}
-  m_LocalRotation: {x: 0, y: -0.32570535, z: 0, w: 0.7492967}
-  m_LocalPosition: {x: -0.33939695, y: 1.773, z: -6.704401}
+  m_LocalRotation: {x: 0.3592119, y: 0.5016767, z: -0.24050316, w: 1}
+  m_LocalPosition: {x: -6.45, y: 10.02, z: -5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5683,7 +5683,7 @@ GameObject:
   - component: {fileID: 1295940848}
   - component: {fileID: 1295940847}
   m_Layer: 0
-  m_Name: Shot_8
+  m_Name: Shot_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7344,8 +7344,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554001912}
-  m_LocalRotation: {x: -0, y: -0.7154564, z: -0, w: -0.6986574}
-  m_LocalPosition: {x: -0.33939695, y: 1.773, z: -6.704401}
+  m_LocalRotation: {x: 0.3592119, y: 0.5016767, z: -0.24050316, w: 0.7492967}
+  m_LocalPosition: {x: -6.45, y: 10.02, z: -5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1090085788}
@@ -9072,6 +9072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973277820}
   - component: {fileID: 1973277819}
+  - component: {fileID: 1973277821}
   m_Layer: 0
   m_Name: eucm_Master_Timeline
   m_TagString: Untagged
@@ -9125,6 +9126,8 @@ PlayableDirector:
     - ae944d57933b35843b149da7b7e2052c: {fileID: 1525496331}
     - 6bdc82c9715c32849905d1e4a4aff0d1: {fileID: 0}
     - 707bac54d1da3a04da371f71def589bc: {fileID: 1525496331}
+    - e0e1684b327aac84f9cf10ca78588870: {fileID: 68408730}
+    - 84395e9cdb8ec9d4aa35ae80a5a51e97: {fileID: 1295940845}
     - 5ac70f83a6ef7994c956d7afeb0b7eb1: {fileID: 1525496331}
     - ffb1671ea91049c4ea47b96837a9f271: {fileID: 1525496331}
     - 3797631ee0c9815478b60e81abcea8c6: {fileID: 0}
@@ -9143,6 +9146,7 @@ PlayableDirector:
     - db71c4e2d50bdfd40a6a1ba82fea444e: {fileID: 1525496331}
     - afd6aae82a4f5b04b8e267b7efa073b5: {fileID: 1525496331}
     - 1a05898cf5b58314c8b5fc7a669ca70d: {fileID: 0}
+    - f7968d16b4676bc40a95c3cb61830a8a: {fileID: 1295940845}
     - dec238fa8b5f9874291940bfe266cabb: {fileID: 0}
     - 8f128488ba4f9ee4ba739bac9d66f033: {fileID: 0}
     - 8d11a8a1aca406f41b0eee918bda6ae9: {fileID: 1525496331}
@@ -9177,6 +9181,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1973277821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973277818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94314ab169f37b4f8e0822d0e3a2ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "Remember to name the actual activation track what you wrote below, \n default
+    is SET_TRACK"
+  trackName: SET_TRACK
+  setMngrName: SET_MANAGER
+  SetTracks:
+  - ShotTimeline: {fileID: 1525496331}
+    setGrp: Shot_01_Set
+  - ShotTimeline: {fileID: 801360615}
+    setGrp: Shot_02_Set
+  - ShotTimeline: {fileID: 773356156}
+    setGrp: Shot_03_Set
+  - ShotTimeline: {fileID: 347506436}
+    setGrp: Shot_04_Set
+  - ShotTimeline: {fileID: 1520884528}
+    setGrp: Shot_05_Set
+  - ShotTimeline: {fileID: 2092658149}
+    setGrp: Shot_06_Set
+  - ShotTimeline: {fileID: 568744953}
+    setGrp: Shot_07_Set
+  - ShotTimeline: {fileID: 1295940845}
+    setGrp: Shot_08_Set
+  - ShotTimeline: {fileID: 68408730}
+    setGrp: CutScene_Set
 --- !u!1 &1977042429
 GameObject:
   m_ObjectHideFlags: 0
