@@ -7216,6 +7216,8 @@ PlayableDirector:
     value: {fileID: 1020671763}
   - key: {fileID: 114298053811580950, guid: 1c5677b9ee0d0064ca4472aa0c3f1009, type: 2}
     value: {fileID: 1020671763}
+  - key: {fileID: 114947756830164268, guid: 1c5677b9ee0d0064ca4472aa0c3f1009, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - e6637b0c58f61964182ad055742ba3de: {fileID: 1496901034}
@@ -11082,6 +11084,7 @@ GameObject:
   - component: {fileID: 607757479}
   - component: {fileID: 607757478}
   - component: {fileID: 607757477}
+  - component: {fileID: 607757480}
   m_Layer: 0
   m_Name: Master_Timeline
   m_TagString: Untagged
@@ -11187,6 +11190,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607757480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607757476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94314ab169f37b4f8e0822d0e3a2ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: Remember to name the actual activation track what you wrote below, default
+    is SET_TRACK
+  trackName: SET_TRACK
+  setMngrName: SET_MANAGER
+  SetTracks:
+  - ShotTimeline: {fileID: 779980781}
+    setGrp: sh01_Set_GRP
+  - ShotTimeline: {fileID: 1814461641}
+    setGrp: sh02_Set_GRP
+  - ShotTimeline: {fileID: 395213288}
+    setGrp: sh03_Set_GRP
 --- !u!1001 &614671287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13812,7 +13838,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020671757}
-  m_LocalRotation: {x: -0.29361406, y: 0.32885182, z: 0.18421467, w: 0.99902695}
+  m_LocalRotation: {x: -0.29463673, y: 0.32999724, z: 0.1848563, w: 0.8775644}
   m_LocalPosition: {x: 1.9134431, y: 9.7587185, z: -55.039154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -22474,7 +22500,7 @@ PlayableDirector:
     value: {fileID: 1875112603}
   - key: {fileID: 114638486300108366, guid: 8b95fc76888205c4ca371b1b9ea6c352, type: 2}
     value: {fileID: 872642914}
-  - key: {fileID: 114635105328565688, guid: 8b95fc76888205c4ca371b1b9ea6c352, type: 2}
+  - key: {fileID: 114334347984867816, guid: 8b95fc76888205c4ca371b1b9ea6c352, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References:

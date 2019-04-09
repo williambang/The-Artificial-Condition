@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-
 [CustomEditor(typeof(Scene_Managers))]
 public class scnMngr_UI : Editor
 {
