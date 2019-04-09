@@ -29,8 +29,9 @@ public class track_manager : MonoBehaviour
         AddSetToTracks();
     }
 
-    void AddSetToTracks() {
+    public void AddSetToTracks() {
         Set_Manager setMngr = GameObject.Find(setMngrName).GetComponent<Set_Manager>();
+        setMngr.AddChildren();
 
         foreach(setTrack item in SetTracks) {
             foreach(GameObject SetGrp in setMngr.sets) {
