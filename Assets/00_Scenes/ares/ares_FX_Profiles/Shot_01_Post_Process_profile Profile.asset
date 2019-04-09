@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -97,26 +97,26 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 3
   toneCurveToeStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.156
   toneCurveToeLength:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.536
   toneCurveShoulderStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.611
   toneCurveShoulderLength:
-    overrideState: 0
+    overrideState: 1
     value: 0.5
   toneCurveShoulderAngle:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.27
   toneCurveGamma:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.08
   ldrLut:
     overrideState: 0
     value: {fileID: 0}
@@ -125,10 +125,10 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 1
+    overrideState: 0
     value: -14.2
   tint:
-    overrideState: 1
+    overrideState: 0
     value: -4.9
   colorFilter:
     overrideState: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   saturation:
-    overrideState: 1
+    overrideState: 0
     value: -18.4
   brightness:
     overrideState: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 1
+    overrideState: 0
     value: 0
   mixerRedOutRedIn:
     overrideState: 0
@@ -176,13 +176,13 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 1
+    overrideState: 0
     value: {x: 1, y: 0.9925116, z: 0.86550474, w: -0.14725971}
   gamma:
-    overrideState: 1
+    overrideState: 0
     value: {x: 1, y: 1, z: 1, w: -0.14683494}
   gain:
-    overrideState: 1
+    overrideState: 0
     value: {x: 0.9594902, y: 1, z: 0.947605, w: -0.7039062}
   masterCurve:
     overrideState: 0
@@ -1401,8 +1401,8 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 21
   intensityX:
     overrideState: 0
     value: 1
@@ -1436,15 +1436,15 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 10
+    value: 7.05
   aperture:
     overrideState: 1
-    value: 5.6
+    value: 7.6
   focalLength:
-    overrideState: 0
-    value: 50
+    overrideState: 1
+    value: 87
   kernelSize:
-    overrideState: 0
+    overrideState: 1
     value: 1
 --- !u!114 &114327019873227716
 MonoBehaviour:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.116
+    value: 0.12
   fastMode:
     overrideState: 1
     value: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
   m_Name: ScreenSpaceReflections
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1527,7 +1527,7 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 50, y: 95}
+    value: {x: 1, y: 95}
   minLuminance:
     overrideState: 1
     value: -3.51
@@ -1567,13 +1567,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.057
+    value: 0.277
   size:
     overrideState: 1
-    value: 1
+    value: 0.612
   lumContrib:
     overrideState: 1
-    value: 0.8
+    value: 0.909
 --- !u!114 &114805905856998292
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1592,19 +1592,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2
+    value: 12.19
   threshold:
     overrideState: 1
-    value: 2.9
+    value: 1.4
   softKnee:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.812
   clamp:
     overrideState: 0
-    value: 65472
+    value: 65136.13
   diffusion:
     overrideState: 0
-    value: 7
+    value: 3.38
   anamorphicRatio:
     overrideState: 0
     value: 0
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
