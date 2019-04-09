@@ -10,7 +10,12 @@ public class Scene_Managers : MonoBehaviour
     public string[] Scenes; 
     // Start is called before the first frame update
     void Start() {
-        LoadAllScenes();
+
+        if(!Application.isPlaying)
+        {
+            LoadAllScenes();
+        }
+        
     } 
 
     public void LoadAllScenes() {
