@@ -10,12 +10,15 @@ public class Shake_Script : MonoBehaviour
     public float minOffset = 200f;
     public Light lht;
 
+    public Vector3 originalPos;
+
     public float originalIntensity = 1000f;
 
     // Update is called once per frame
     
     void Start() {
         originalIntensity = lht.intensity;
+        originalPos = transform.localPosition;
     }
     
     void Update()
@@ -27,12 +30,13 @@ public class Shake_Script : MonoBehaviour
         else {
             lht = GetComponent<Light>();
         }
-
-        Vector3 originalPos = transform.localPosition;
+       
         float x = originalPos.x + Random.Range(-1f, 1f) * magnitude;
         float y = originalPos.y + Random.Range(-1f, 1f) * magnitude;
         float z = originalPos.z + Random.Range(-1f, 1f) * magnitude;
 
         transform.localPosition = new Vector3(x, y, z);
+
+        //transform.localPosition = originalPos;
     }
 }
