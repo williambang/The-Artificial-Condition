@@ -7,6 +7,7 @@ public class Set_Manager : MonoBehaviour
     public List<GameObject> sets = new List<GameObject>();
 
     void Awake() {
+        sets.Clear();
         AddChildren();
     }
 
