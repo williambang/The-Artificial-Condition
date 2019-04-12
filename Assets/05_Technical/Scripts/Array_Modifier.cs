@@ -38,7 +38,6 @@ public class Array_Modifier : MonoBehaviour
             };
         }
 
-
         float lastX = 0;
         float lastY = 0;
         float lastZ = 0;
@@ -47,12 +46,16 @@ public class Array_Modifier : MonoBehaviour
             for (int i = 0; i < CountY; i++) {
                 for (int j = 0; j < CountX; j++) {
 
-                    Vector3 pos = new Vector3(
+                    /*/Vector3 pos = new Vector3(
                         lastX + transform.localPosition.x, 
                         lastY + transform.localPosition.y,
-                        lastZ + transform.localPosition.z);
+                        lastZ + transform.localPosition.z);*/
+
+                    Vector3 pos = new Vector3(lastX, lastY, lastZ);
 
                     GameObject go = Instantiate(MasterObject, pos, Quaternion.identity, transform);
+                    go.transform.localPosition = pos;
+
                     go.name = MasterObject.name + "_" + i + "_" + j + "_" + h;
 
                     lastX += 1 + Offset.x;
@@ -60,7 +63,6 @@ public class Array_Modifier : MonoBehaviour
                 }
                     lastX = transform.localPosition.x;
                     lastY += 1 + Offset.y;
-                    
                     
             }
             lastY = transform.localPosition.y;
