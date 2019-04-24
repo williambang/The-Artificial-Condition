@@ -8577,8 +8577,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020671757}
-  m_LocalRotation: {x: -0.1078543, y: 0.47540668, z: 0.04884019, w: 0.871763}
-  m_LocalPosition: {x: 94.24, y: 67.86, z: 249.55}
+  m_LocalRotation: {x: 0.015714923, y: 0.5978075, z: 0.011162659, w: -0.80140793}
+  m_LocalPosition: {x: 36.6997, y: 25.206919, z: -37.009308}
   m_LocalScale: {x: 1.000001, y: 1, z: 1.000001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11393,6 +11393,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 114235113944462704, guid: 1f141a49f8bc8c048ac8210c14f3694c, type: 2}
     value: {fileID: 603006845}
+  - key: {fileID: 114576814325112790, guid: 1f141a49f8bc8c048ac8210c14f3694c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &1594502866
@@ -14785,6 +14787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797986662}
   - component: {fileID: 1797986661}
+  - component: {fileID: 1797986663}
   m_Layer: 0
   m_Name: trep_Master_Timeline
   m_TagString: Untagged
@@ -14855,6 +14858,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797986663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797986660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94314ab169f37b4f8e0822d0e3a2ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "Remember to name the actual activation track what you wrote below, \n default
+    is SET_TRACK"
+  trackName: SET_TRACK
+  setMngrName: SET_MANAGER
+  SetTracks:
+  - ShotTimeline: {fileID: 1476461958}
+    setGrp: Shot_01_Set
+  - ShotTimeline: {fileID: 1520288729}
+    setGrp: Shot_02_Set
+  - ShotTimeline: {fileID: 1566942036}
+    setGrp: Shot_04_Set
+  - ShotTimeline: {fileID: 1732527810}
+    setGrp: Shot_05_Set
+  - ShotTimeline: {fileID: 1857585930}
+    setGrp: Shot_06_Set
+  - ShotTimeline: {fileID: 839357968}
+    setGrp: Shot_07_Set
 --- !u!1001 &1799615505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15742,8 +15774,11 @@ PlayableDirector:
     value: {fileID: 470802973}
   - key: {fileID: 114727788538832288, guid: 9f58e53981db84649a1d3774144cf28e, type: 2}
     value: {fileID: 434384281}
+  - key: {fileID: 114574841828175328, guid: 9f58e53981db84649a1d3774144cf28e, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - e0bb527964f90eb4ea90d7538548edfd: {fileID: 0}
 --- !u!4 &1857585933
 Transform:
   m_ObjectHideFlags: 0
