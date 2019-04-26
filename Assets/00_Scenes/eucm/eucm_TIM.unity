@@ -2138,7 +2138,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 14.4
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2163,8 +2163,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740304666}
-  m_LocalRotation: {x: -0.048198745, y: 0.99532896, z: 0.050107945, w: 0.15584384}
-  m_LocalPosition: {x: -2.836, y: 1.831, z: -1.801}
+  m_LocalRotation: {x: -0.9876425, y: -0.016008683, z: -0.003350284, w: 1}
+  m_LocalPosition: {x: 0.003440857, y: 2.91, z: -4.327443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2624,7 +2624,7 @@ GameObject:
   - component: {fileID: 801360618}
   - component: {fileID: 801360617}
   m_Layer: 0
-  m_Name: Shot_02
+  m_Name: Shot_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5832,7 +5832,7 @@ GameObject:
   - component: {fileID: 1525496334}
   - component: {fileID: 1525496333}
   m_Layer: 0
-  m_Name: Shot_01
+  m_Name: Shot_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7508,9 +7508,9 @@ MonoBehaviour:
   trackName: SET_TRACK
   setMngrName: SET_MANAGER
   SetTracks:
-  - ShotTimeline: {fileID: 1525496331}
-    setGrp: Shot_01_Set
   - ShotTimeline: {fileID: 801360615}
+    setGrp: Shot_01_Set
+  - ShotTimeline: {fileID: 1525496331}
     setGrp: Shot_02_Set
   - ShotTimeline: {fileID: 773356156}
     setGrp: Shot_03_Set
