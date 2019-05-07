@@ -211,7 +211,8 @@ Material:
     - _DetailSmoothnessScale: 1
     - _DetailsShow: 0
     - _DielectricIor: 1.5
-    - _DiffusionProfile: 2
+    - _DiffusionProfile: -1
+    - _DiffusionProfileHash: 2.5452807
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
@@ -239,6 +240,9 @@ Material:
     - _EmissiveColorMapUV: 0
     - _EmissiveColorMapUVLocal: 0
     - _EmissiveColorMode: 1
+    - _EmissiveExposureWeight: 1
+    - _EmissiveIntensity: 1
+    - _EmissiveIntensityUnit: 0
     - _EmissiveShow: 0
     - _EnableAnisotropy: 0
     - _EnableBlendModePreserveSpecularLighting: 1
@@ -336,8 +340,12 @@ Material:
     - _SrcBlend: 1
     - _StandardShow: 1
     - _StencilRef: 2
+    - _StencilRefDepth: 0
+    - _StencilRefGBuffer: 2
     - _StencilRefMV: 128
-    - _StencilWriteMask: 7
+    - _StencilWriteMask: 3
+    - _StencilWriteMaskDepth: 32
+    - _StencilWriteMaskGBuffer: 3
     - _StencilWriteMaskMV: 128
     - _Stiffness: 1
     - _SubsurfaceMask: 1
@@ -366,9 +374,11 @@ Material:
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
     - _TransparentSortPriority: 0
+    - _TransparentWritingVelocity: 0
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
+    - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
     - _VlayerRecomputePerLight: 0
     - _VlayerUseRefractedAnglesForBase: 0
@@ -397,9 +407,11 @@ Material:
     - _DetailSmoothnessMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
     - _DetailSmoothnessMapRange: {r: 0, g: 1, b: 0, a: 0}
     - _DetailSmoothnessMapRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _DiffusionProfileAsset: {r: 62.48539, g: -1.02712e+32, b: -3.947078e-26, a: 7.7253765e-27}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceMaskMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
     - _IridescenceMaskMapRange: {r: 0, g: 1, b: 0, a: 0}
