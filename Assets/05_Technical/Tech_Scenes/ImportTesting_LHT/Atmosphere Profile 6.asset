@@ -30,6 +30,7 @@ MonoBehaviour:
   m_Name: VolumetricFog
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 0
     m_Value: 1
@@ -76,8 +77,7 @@ MonoBehaviour:
     m_Value: 100
   meanHeight:
     m_OverrideState: 1
-    m_Value: 7
-    min: 1
+    m_Value: 100
   anisotropy:
     m_OverrideState: 1
     m_Value: 0.24
@@ -104,9 +104,13 @@ MonoBehaviour:
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
     m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 0
+    m_Value: 0
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -123,6 +127,7 @@ MonoBehaviour:
   m_Name: ProceduralSky
   m_EditorClassIdentifier: 
   active: 0
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 0
     m_Value: 0
@@ -198,6 +203,7 @@ MonoBehaviour:
   m_Name: HDRISky
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
     m_Value: 97.3
