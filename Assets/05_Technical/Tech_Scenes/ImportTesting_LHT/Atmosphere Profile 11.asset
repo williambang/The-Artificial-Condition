@@ -1,6 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7533813759767857637
+--- !u!114 &-7744470995475111914
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
+  m_Name: VisualEnvironment
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  skyType:
+    m_OverrideState: 1
+    m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 0
+    m_Value: 0
+  fogType:
+    m_OverrideState: 1
+    m_Value: 3
+--- !u!114 &-7526115894940111944
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19,23 +42,23 @@ MonoBehaviour:
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 8
     min: 0.1
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 70
     min: 0
   nearFocusEnd:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 10
     min: 0
   farFocusStart:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 80
     min: 0
   farFocusEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 10
     min: 0
   nearSampleCount:
     m_OverrideState: 0
@@ -63,26 +86,7 @@ MonoBehaviour:
   resolution:
     m_OverrideState: 0
     m_Value: 2
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Atmosphere Profile
-  m_EditorClassIdentifier: 
-  components:
-  - {fileID: 114650145349436820}
-  - {fileID: 114800569728542346}
-  - {fileID: 114257490036076338}
-  - {fileID: 114289658334400062}
-  - {fileID: 4518056107282866749}
-  - {fileID: -7533813759767857637}
---- !u!114 &114257490036076338
+--- !u!114 &-1934817931995913748
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,14 +139,14 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 6000
+    m_Value: 300
     min: 1
   baseHeight:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 40
   meanHeight:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 110
   anisotropy:
     m_OverrideState: 1
     m_Value: 0.24
@@ -156,7 +160,86 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &114289658334400062
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Atmosphere Profile 11
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -7744470995475111914}
+  - {fileID: -1934817931995913748}
+  - {fileID: 1457812081870221313}
+  - {fileID: 4771393493518255412}
+  - {fileID: -7526115894940111944}
+  - {fileID: 1302484717135615323}
+  - {fileID: 419121964487077109}
+--- !u!114 &419121964487077109
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b6af8f7ad32324cb6941c3290e5895, type: 3}
+  m_Name: MicroShadowing
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  opacity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+--- !u!114 &1302484717135615323
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  sampleCount:
+    m_OverrideState: 1
+    m_Value: 8
+    min: 2
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+  maxVelocity:
+    m_OverrideState: 1
+    m_Value: 250
+    min: 0
+    max: 1500
+  minVel:
+    m_OverrideState: 1
+    m_Value: 2
+    min: 0
+    max: 64
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+    min: 0
+    max: 0.2
+--- !u!114 &1457812081870221313
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,11 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
   m_Name: HDRISky
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 97.3
+    m_Value: 0
     min: 0
     max: 360
   skyIntensityMode:
@@ -205,7 +288,7 @@ MonoBehaviour:
   hdriSky:
     m_OverrideState: 1
     m_Value: {fileID: 8900000, guid: b68dfcb836bb07948ae5532db1c5deeb, type: 3}
---- !u!114 &114650145349436820
+--- !u!114 &4771393493518255412
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,115 +297,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: ProceduralSky
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 1
-    m_Value: -1.8
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 1
-    m_Value: 0.101
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 1
-    m_Value: 7.97
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 1
-    m_Value: 1.09
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 1
-    m_Value: 1
---- !u!114 &114800569728542346
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: VisualEnvironment
+  m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
+  m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
-  skyType:
-    m_OverrideState: 1
-    m_Value: 1
-  skyAmbientMode:
+  spectralLut:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  intensity:
     m_OverrideState: 0
     m_Value: 0
-  fogType:
-    m_OverrideState: 1
-    m_Value: 3
---- !u!114 &4518056107282866749
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b6af8f7ad32324cb6941c3290e5895, type: 3}
-  m_Name: MicroShadowing
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  enable:
-    m_OverrideState: 1
-    m_Value: 1
-  opacity:
-    m_OverrideState: 1
-    m_Value: 1
     min: 0
     max: 1
+  maxSamples:
+    m_OverrideState: 0
+    m_Value: 8
+    min: 3
+    max: 24
