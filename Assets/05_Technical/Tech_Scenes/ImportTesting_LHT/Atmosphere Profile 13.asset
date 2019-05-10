@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8293921987198853931
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b709909182ba0943abef2c49ed59205, type: 3}
+  m_Name: PaniniProjection
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  distance:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  cropToFit:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
 --- !u!114 &-4121419304302483511
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -22,6 +46,43 @@ MonoBehaviour:
     m_Value: 1
     min: 0
     max: 1
+--- !u!114 &-2239870951363224522
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1bfcd0f0fa7b8468f281d6bbbaf320, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -1
+    max: 1
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0.01
+    max: 5
 --- !u!114 &-1156965339153433207
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,7 +170,6 @@ MonoBehaviour:
   m_Name: Atmosphere Profile 13
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7658857394939861890}
   - {fileID: 2594824915924184158}
   - {fileID: -1156965339153433207}
   - {fileID: 2853535321136202539}
@@ -117,6 +177,8 @@ MonoBehaviour:
   - {fileID: 6732752253088023163}
   - {fileID: 474558576410021653}
   - {fileID: -4121419304302483511}
+  - {fileID: -8293921987198853931}
+  - {fileID: -2239870951363224522}
 --- !u!114 &474558576410021653
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -133,7 +195,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.402
+    m_Value: 0.657
     min: 0
     max: 1
   scatter:
@@ -288,11 +350,11 @@ MonoBehaviour:
     min: 0.1
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 1.47
     min: 0
   nearFocusEnd:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2.26
     min: 0
   farFocusStart:
     m_OverrideState: 1
@@ -328,79 +390,3 @@ MonoBehaviour:
   resolution:
     m_OverrideState: 0
     m_Value: 2
---- !u!114 &7658857394939861890
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: ProceduralSky
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 1
-    m_Value: -1.8
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 1
-    m_Value: 0.101
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 1
-    m_Value: 7.97
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 1
-    m_Value: 1.09
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 1
-    m_Value: 1
