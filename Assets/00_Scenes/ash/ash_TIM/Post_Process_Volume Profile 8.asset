@@ -34,12 +34,13 @@ MonoBehaviour:
   m_Name: MicroShadowing
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   enable:
     m_OverrideState: 1
     m_Value: 1
   opacity:
     m_OverrideState: 1
-    m_Value: 0.532
+    m_Value: 0.35
     min: 0
     max: 1
 --- !u!114 &114044968852825658
@@ -55,6 +56,7 @@ MonoBehaviour:
   m_Name: VolumetricFog
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 0
     m_Value: 1
@@ -102,7 +104,6 @@ MonoBehaviour:
   meanHeight:
     m_OverrideState: 1
     m_Value: 127.3
-    min: 1
   anisotropy:
     m_OverrideState: 1
     m_Value: 1
@@ -129,9 +130,13 @@ MonoBehaviour:
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
     m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 0
+    m_Value: 0
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -148,6 +153,7 @@ MonoBehaviour:
   m_Name: HDRISky
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
     m_Value: 30
@@ -196,6 +202,7 @@ MonoBehaviour:
   m_Name: ContactShadows
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   enable:
     m_OverrideState: 1
     m_Value: 1
@@ -240,6 +247,7 @@ MonoBehaviour:
   m_Name: HDShadowSettings
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   maxShadowDistance:
     m_OverrideState: 0
     m_Value: 809.52
@@ -252,34 +260,24 @@ MonoBehaviour:
   cascadeShadowSplit0:
     m_OverrideState: 0
     m_Value: 0.05
-    min: 0
-    max: 1
   cascadeShadowSplit1:
     m_OverrideState: 0
     m_Value: 0.15
-    min: 0
-    max: 1
   cascadeShadowSplit2:
     m_OverrideState: 0
     m_Value: 0.3
-    min: 0
-    max: 1
   cascadeShadowBorder0:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder1:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder2:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder3:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
 --- !u!114 &114916141146155220
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -293,6 +291,7 @@ MonoBehaviour:
   m_Name: ScreenSpaceReflection
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   depthBufferThickness:
     m_OverrideState: 1
     m_Value: 1
@@ -332,6 +331,7 @@ MonoBehaviour:
   m_Name: VolumetricLightingController
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   depthExtent:
     m_OverrideState: 1
     m_Value: 78.6
