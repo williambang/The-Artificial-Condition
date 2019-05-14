@@ -79,7 +79,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.175
+    m_Value: 0.401
     min: 0
     max: 1
   scatter:
@@ -112,6 +112,45 @@ MonoBehaviour:
   anamorphic:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &-4476603617840298241
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9343219, z: 0.9327559, w: -0.35243866}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.95594317, z: 0.8237741, w: 0.078319676}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {x: 0.9847723, y: 1, z: 0.9055833, w: 0}
+  shadowsStart:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  shadowsEnd:
+    m_OverrideState: 0
+    m_Value: 0.3
+    min: 0
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+    min: 0
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +171,8 @@ MonoBehaviour:
   - {fileID: -8115380387464110112}
   - {fileID: 6253701448122973824}
   - {fileID: -4627019894639025658}
+  - {fileID: -4476603617840298241}
+  - {fileID: 7146460454482016399}
 --- !u!114 &114104195823279190
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -261,10 +302,10 @@ MonoBehaviour:
     min: 1
   baseHeight:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -2.1
   meanHeight:
     m_OverrideState: 1
-    m_Value: 3.36
+    m_Value: 2.37
   anisotropy:
     m_OverrideState: 1
     m_Value: 0.866
@@ -272,7 +313,7 @@ MonoBehaviour:
     max: 1
   globalLightProbeDimmer:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.133
     min: 0
     max: 1
   enableDistantFog:
@@ -344,3 +385,26 @@ MonoBehaviour:
     m_Value: -12
     min: -12
     max: -1
+--- !u!114 &7146460454482016399
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.014239942}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.03915984}
