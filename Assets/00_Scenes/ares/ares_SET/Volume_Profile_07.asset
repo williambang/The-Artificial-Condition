@@ -1,69 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8115380387464110112
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa3b8214f75b354e9ba2caadd022259, type: 3}
-  m_Name: DepthOfField
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  focusMode:
-    m_OverrideState: 1
-    m_Value: 2
-  focusDistance:
-    m_OverrideState: 1
-    m_Value: 0.6
-    min: 0.1
-  nearFocusStart:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-  nearFocusEnd:
-    m_OverrideState: 1
-    m_Value: 3
-    min: 0
-  farFocusStart:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-  farFocusEnd:
-    m_OverrideState: 1
-    m_Value: 8000
-    min: 0
-  nearSampleCount:
-    m_OverrideState: 0
-    m_Value: 5
-    min: 3
-    max: 8
-  nearMaxBlur:
-    m_OverrideState: 0
-    m_Value: 4
-    min: 0
-    max: 8
-  farSampleCount:
-    m_OverrideState: 0
-    m_Value: 7
-    min: 3
-    max: 16
-  farMaxBlur:
-    m_OverrideState: 0
-    m_Value: 8
-    min: 0
-    max: 16
-  highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 1
-  resolution:
-    m_OverrideState: 0
-    m_Value: 2
---- !u!114 &-4627019894639025658
+--- !u!114 &-741583897148507217
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,6 +49,29 @@ MonoBehaviour:
   anamorphic:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &-438674141926839951
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
+  m_Name: VisualEnvironment
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  skyType:
+    m_OverrideState: 1
+    m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 0
+    m_Value: 0
+  fogType:
+    m_OverrideState: 1
+    m_Value: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,17 +82,83 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Volume_Profile_04
+  m_Name: Volume_Profile_07
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 114319035097365566}
-  - {fileID: 114254311919140566}
-  - {fileID: 114104195823279190}
-  - {fileID: 4458911176099340003}
-  - {fileID: -8115380387464110112}
-  - {fileID: 6253701448122973824}
-  - {fileID: -4627019894639025658}
---- !u!114 &114104195823279190
+  - {fileID: 4900141347596979660}
+  - {fileID: -438674141926839951}
+  - {fileID: 2422991985057170383}
+  - {fileID: 800331713206732133}
+  - {fileID: 5861187728211877745}
+  - {fileID: 1665300851735643267}
+  - {fileID: -741583897148507217}
+--- !u!114 &800331713206732133
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b6af8f7ad32324cb6941c3290e5895, type: 3}
+  m_Name: MicroShadowing
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  opacity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+--- !u!114 &1665300851735643267
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: AmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1.98
+    min: 0
+    max: 4
+  thicknessModifier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 1
+    max: 10
+  directLightingStrength:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  noiseFilterTolerance:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -8
+    max: 0
+  blurTolerance:
+    m_OverrideState: 0
+    m_Value: -4.6
+    min: -8
+    max: 1
+  upsampleTolerance:
+    m_OverrideState: 0
+    m_Value: -12
+    min: -12
+    max: -1
+--- !u!114 &2422991985057170383
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,30 +207,7 @@ MonoBehaviour:
   hdriSky:
     m_OverrideState: 1
     m_Value: {fileID: 8900000, guid: f7b439249e15ab34e9900b362070a836, type: 3}
---- !u!114 &114254311919140566
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: VisualEnvironment
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  skyType:
-    m_OverrideState: 1
-    m_Value: 1
-  skyAmbientMode:
-    m_OverrideState: 0
-    m_Value: 0
-  fogType:
-    m_OverrideState: 1
-    m_Value: 3
---- !u!114 &114319035097365566
+--- !u!114 &4900141347596979660
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,7 +281,7 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &4458911176099340003
+--- !u!114 &5861187728211877745
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,60 +290,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b6af8f7ad32324cb6941c3290e5895, type: 3}
-  m_Name: MicroShadowing
+  m_Script: {fileID: 11500000, guid: aaa3b8214f75b354e9ba2caadd022259, type: 3}
+  m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
-  enable:
+  focusMode:
     m_OverrideState: 1
-    m_Value: 1
-  opacity:
+    m_Value: 2
+  focusDistance:
+    m_OverrideState: 1
+    m_Value: 0.6
+    min: 0.1
+  nearFocusStart:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+  nearFocusEnd:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+  farFocusStart:
     m_OverrideState: 1
     m_Value: 1
     min: 0
-    max: 1
---- !u!114 &6253701448122973824
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
-  m_Name: AmbientOcclusion
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  intensity:
+  farFocusEnd:
     m_OverrideState: 1
-    m_Value: 1.98
+    m_Value: 8000
     min: 0
-    max: 4
-  thicknessModifier:
-    m_OverrideState: 1
+  nearSampleCount:
+    m_OverrideState: 0
+    m_Value: 5
+    min: 3
+    max: 8
+  nearMaxBlur:
+    m_OverrideState: 0
+    m_Value: 4
+    min: 0
+    max: 8
+  farSampleCount:
+    m_OverrideState: 0
+    m_Value: 7
+    min: 3
+    max: 16
+  farMaxBlur:
+    m_OverrideState: 0
+    m_Value: 8
+    min: 0
+    max: 16
+  highQualityFiltering:
+    m_OverrideState: 0
     m_Value: 1
-    min: 1
-    max: 10
-  directLightingStrength:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-    max: 1
-  noiseFilterTolerance:
+  resolution:
     m_OverrideState: 0
-    m_Value: 0
-    min: -8
-    max: 0
-  blurTolerance:
-    m_OverrideState: 0
-    m_Value: -4.6
-    min: -8
-    max: 1
-  upsampleTolerance:
-    m_OverrideState: 0
-    m_Value: -12
-    min: -12
-    max: -1
+    m_Value: 2
