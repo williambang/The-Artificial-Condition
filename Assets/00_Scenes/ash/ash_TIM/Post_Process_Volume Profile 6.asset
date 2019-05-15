@@ -43,14 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa3b8214f75b354e9ba2caadd022259, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   focusMode:
     m_OverrideState: 1
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 2.2
     min: 0.1
   nearFocusStart:
     m_OverrideState: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
     m_Value: {x: 0.933477, y: 0.95145917, z: 1, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.16178387}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.09182349}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: -6903961298879538876}
   - {fileID: 954895419738249803}
   - {fileID: -3843430557039520555}
+  - {fileID: 1154483744270558736}
 --- !u!114 &114235577322435274
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -372,7 +373,7 @@ MonoBehaviour:
     max: 200
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: -13
+    m_Value: -23
     min: -200
     max: 200
   greenOutRedIn:
@@ -391,21 +392,44 @@ MonoBehaviour:
     min: -200
     max: 200
   blueOutRedIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -200
     max: 200
   blueOutGreenIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -200
     max: 200
   blueOutBlueIn:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
     min: -200
     max: 200
   m_SelectedChannel: 1
+--- !u!114 &1154483744270558736
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 0.99974346, y: 0.99552536, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.061215572}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.11368608}
 --- !u!114 &7285394160693931655
 MonoBehaviour:
   m_ObjectHideFlags: 3
