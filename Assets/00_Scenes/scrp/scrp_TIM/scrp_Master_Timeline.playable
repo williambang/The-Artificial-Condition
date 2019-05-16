@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7865682015475269867
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
+  m_Name: Markers
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9,10 +32,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 337831424, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
   m_Name: scrp_Master_Timeline
   m_EditorClassIdentifier: 
-  m_NextId: 0
+  m_Version: 0
   m_Tracks:
   - {fileID: 114770167047974452}
   - {fileID: 114417825218758090}
@@ -23,7 +46,7 @@ MonoBehaviour:
   m_EditorSettings:
     m_Framerate: 24
   m_DurationMode: 0
-  m_Version: 0
+  m_MarkerTrack: {fileID: -7865682015475269867}
 --- !u!114 &114000269325508122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1670381969, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 48853ae485fa386428341ac1ea122570, type: 3}
   m_Name: ControlPlayableAsset
   m_EditorClassIdentifier: 
   sourceGameObject:
@@ -56,17 +79,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 15e0374501f39d54eb30235764636e0e, type: 3}
   m_Name: Shot_01
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
+  m_Curves: {fileID: 0}
   m_Parent: {fileID: 114770167047974452}
   m_Children: []
   m_Clips:
-  - m_Start: 0
+  - m_Version: 1
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 114524756319792478}
     m_Duration: 3.75
@@ -134,8 +160,8 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: Shot_01
-    m_Version: 1
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114376910912029594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +175,7 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 3
+  take: 21
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -166,12 +192,13 @@ MonoBehaviour:
       m_OutputResolution:
         m_CustomWidth: 1024
         m_CustomHeight: 1024
-        imageHeight: 2160
+        imageHeight: 1080
         maxSupportedHeight: 4320
         m_AspectRatio:
-          m_CustomAspectX: 235
+          m_CustomAspectX: 280
           m_CustomAspectY: 100
           m_ImageAspect: 7
+      flipFinalOutput: 1
     cameraInputSettings:
       allowTransparency: 0
       m_OutputResolution:
@@ -227,17 +254,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 15e0374501f39d54eb30235764636e0e, type: 3}
   m_Name: Shot_03
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
-  m_Parent: {fileID: 114770167047974452}
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 7.5
+  - m_Version: 1
+    m_Start: 12.958333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 114529320147774168}
     m_Duration: 3.75
@@ -305,8 +335,8 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: Shot_03
-    m_Version: 1
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114417825218758090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,17 +349,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6cf5671577b7344ba25c25b4346ce4, type: 3}
   m_Name: Recorder Track
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
+  m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 0
+  - m_Version: 1
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 114985570336646686}
-    m_Duration: 16.25
+    m_Duration: 7.5
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114417825218758090}
     m_EaseInDuration: 0
@@ -394,8 +427,8 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: RecorderClip
-    m_Version: 1
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114435021782895068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,17 +438,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 15e0374501f39d54eb30235764636e0e, type: 3}
   m_Name: Shot_02
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
-  m_Parent: {fileID: 114770167047974452}
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 3.75
+  - m_Version: 1
+    m_Start: 3.75
     m_ClipIn: 0
     m_Asset: {fileID: 114750560157989308}
     m_Duration: 3.75
@@ -483,8 +519,8 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: Shot_02
-    m_Version: 1
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114524756319792478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -494,7 +530,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1670381969, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 48853ae485fa386428341ac1ea122570, type: 3}
   m_Name: ControlPlayableAsset
   m_EditorClassIdentifier: 
   sourceGameObject:
@@ -517,7 +553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1670381969, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 48853ae485fa386428341ac1ea122570, type: 3}
   m_Name: ControlPlayableAsset
   m_EditorClassIdentifier: 
   sourceGameObject:
@@ -540,7 +576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1670381969, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 48853ae485fa386428341ac1ea122570, type: 3}
   m_Name: ControlPlayableAsset
   m_EditorClassIdentifier: 
   sourceGameObject:
@@ -563,13 +599,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
   m_Name: Shots
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
+  m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children:
   - {fileID: 114095083986563050}
@@ -577,7 +615,8 @@ MonoBehaviour:
   - {fileID: 114377944933606830}
   - {fileID: 114803502614816810}
   m_Clips: []
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114803502614816810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -587,17 +626,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1095772578, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 15e0374501f39d54eb30235764636e0e, type: 3}
   m_Name: Shot_04
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
   m_Locked: 0
   m_Muted: 0
   m_CustomPlayableFullTypename: 
-  m_AnimClip: {fileID: 0}
+  m_Curves: {fileID: 0}
   m_Parent: {fileID: 114770167047974452}
   m_Children: []
   m_Clips:
-  - m_Start: 11.25
+  - m_Version: 1
+    m_Start: 7.5
     m_ClipIn: 0
     m_Asset: {fileID: 114000269325508122}
     m_Duration: 5
@@ -665,8 +707,8 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: Shot_04
-    m_Version: 1
-  m_Version: 2
+  m_Markers:
+    m_Objects: []
 --- !u!114 &114985570336646686
 MonoBehaviour:
   m_ObjectHideFlags: 1
