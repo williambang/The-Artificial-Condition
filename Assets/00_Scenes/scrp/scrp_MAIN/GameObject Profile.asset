@@ -49,6 +49,29 @@ MonoBehaviour:
     m_Value: 8
     min: 3
     max: 24
+--- !u!114 &-6596663083437420735
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.008745081}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.056843158}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.087450825}
 --- !u!114 &-6514042679106246062
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -99,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -196,17 +219,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.95207036, y: 0.9602475, z: 1, w: -0.39925143}
+    m_Value: {x: 0.95207036, y: 0.9602475, z: 1, w: -0.13554882}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9820213, z: 0.9066569, w: 0.1559576}
+    m_Value: {x: 1, y: 0.9820213, z: 0.9066569, w: 0.05101661}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.77336824, y: 0.97869444, z: 1, w: 0.085087314}
+    m_Value: {x: 0.77336824, y: 0.97869444, z: 1, w: 0.28421518}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -249,6 +272,7 @@ MonoBehaviour:
   - {fileID: -2794008296649712426}
   - {fileID: -2377105714762360087}
   - {fileID: -7884636195871512884}
+  - {fileID: -6596663083437420735}
 --- !u!114 &114039799496722518
 MonoBehaviour:
   m_ObjectHideFlags: 3
