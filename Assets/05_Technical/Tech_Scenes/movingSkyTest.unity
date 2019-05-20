@@ -400,6 +400,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d6212610318364087d86b73717ff2c, type: 3}
+--- !u!95 &131101334 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: f2d6212610318364087d86b73717ff2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 131101333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &293910294
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +805,8 @@ PlayableDirector:
     value: {fileID: 1460522884}
   - key: {fileID: -7072901260598596229, guid: 1c47ceb307743a74b9b5233969643ad0, type: 2}
     value: {fileID: 1928833604}
+  - key: {fileID: -8440888489356743249, guid: 1c47ceb307743a74b9b5233969643ad0, type: 2}
+    value: {fileID: 131101334}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1928833600
@@ -871,8 +879,11 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.0028
+      - m_Value: 0.5
         m_Name: velocity
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: spawnRate
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -903,7 +914,7 @@ Transform:
   m_GameObject: {fileID: 1928833600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2365, y: 1.2365, z: 1.2365}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
