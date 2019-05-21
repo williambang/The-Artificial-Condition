@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8159111265000442756
+--- !u!114 &-8464763276289871392
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,7 +22,30 @@ MonoBehaviour:
     m_Value: 0.703
     min: 0
     max: 1
---- !u!114 &-5283857551964884297
+--- !u!114 &-8366158634330735843
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
+  m_Name: VolumetricLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  depthExtent:
+    m_OverrideState: 1
+    m_Value: 78.6
+    min: 0.1
+  sliceDistributionUniformity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+--- !u!114 &-3583082947017544727
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,7 +75,7 @@ MonoBehaviour:
     max: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 5000
+    m_Value: 5223.1
     min: 0
   mipFogMaxMip:
     m_OverrideState: 1
@@ -75,17 +98,17 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 408.2
     min: 1
   baseHeight:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 49.8
   meanHeight:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 127.3
   anisotropy:
     m_OverrideState: 1
-    m_Value: -0.2
+    m_Value: 1
     min: -1
     max: 1
   globalLightProbeDimmer:
@@ -96,7 +119,49 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &-438616397733779460
+--- !u!114 &-1191377076318387611
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
+  m_Name: VisualEnvironment
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  skyType:
+    m_OverrideState: 1
+    m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 1
+    m_Value: 0
+  fogType:
+    m_OverrideState: 1
+    m_Value: 3
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: GameObject Profile 4
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -1191377076318387611}
+  - {fileID: 4951766629520558578}
+  - {fileID: -3583082947017544727}
+  - {fileID: -8464763276289871392}
+  - {fileID: 3598917556736868348}
+  - {fileID: -8366158634330735843}
+--- !u!114 &3598917556736868348
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,98 +206,7 @@ MonoBehaviour:
     m_Value: 8
     min: 4
     max: 64
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: GameObject Profile 3
-  m_EditorClassIdentifier: 
-  components:
-  - {fileID: 3274526357592224155}
-  - {fileID: 4166963993640825737}
-  - {fileID: -5283857551964884297}
-  - {fileID: -8159111265000442756}
-  - {fileID: -438616397733779460}
-  - {fileID: 2805190357505879398}
---- !u!114 &2805190357505879398
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.175
-    min: 0
-    max: 1
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.7
-    min: 0
-    max: 1
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
-  dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
-  dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 1
-  resolution:
-    m_OverrideState: 0
-    m_Value: 2
-  prefilter:
-    m_OverrideState: 0
-    m_Value: 0
-  anamorphic:
-    m_OverrideState: 0
-    m_Value: 1
---- !u!114 &3274526357592224155
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: VisualEnvironment
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  skyType:
-    m_OverrideState: 1
-    m_Value: 1
-  skyAmbientMode:
-    m_OverrideState: 1
-    m_Value: 0
-  fogType:
-    m_OverrideState: 1
-    m_Value: 3
---- !u!114 &4166963993640825737
+--- !u!114 &4951766629520558578
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
