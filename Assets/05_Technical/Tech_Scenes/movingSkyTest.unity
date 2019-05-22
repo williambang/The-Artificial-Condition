@@ -424,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &293910295
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1104,8 +1104,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 8680273825203914921, guid: 1c47ceb307743a74b9b5233969643ad0, type: 2}
-    value: {fileID: 1460522884}
   - key: {fileID: -7072901260598596229, guid: 1c47ceb307743a74b9b5233969643ad0, type: 2}
     value: {fileID: 1928833604}
   - key: {fileID: -8440888489356743249, guid: 1c47ceb307743a74b9b5233969643ad0, type: 2}
@@ -1148,7 +1146,7 @@ VFXRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
-  m_RendererPriority: 0
+  m_RendererPriority: 10
   m_Materials:
   - {fileID: 0}
   m_StaticBatchInfo:
@@ -1184,10 +1182,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.03781376
+      - m_Value: 0.5
         m_Name: velocity
         m_Overridden: 1
-      - m_Value: 27.696838
+      - m_Value: 0
         m_Name: spawnRate
         m_Overridden: 1
     m_Vector2f:
@@ -1514,7 +1512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &8409810448373886063
 PrefabInstance:
   m_ObjectHideFlags: 0
