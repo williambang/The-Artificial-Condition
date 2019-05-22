@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
+  m_AdvancedMode: 1
   focusMode:
     m_OverrideState: 1
     m_Value: 2
@@ -23,38 +23,38 @@ MonoBehaviour:
     min: 0.1
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
     min: 0
   nearFocusEnd:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
     min: 0
   farFocusStart:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 100
     min: 0
   farFocusEnd:
     m_OverrideState: 1
     m_Value: 8000
     min: 0
   nearSampleCount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5
     min: 3
     max: 8
   nearMaxBlur:
-    m_OverrideState: 0
-    m_Value: 4
+    m_OverrideState: 1
+    m_Value: 2.85
     min: 0
     max: 8
   farSampleCount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 7
     min: 3
     max: 16
   farMaxBlur:
-    m_OverrideState: 0
-    m_Value: 8
+    m_OverrideState: 1
+    m_Value: 2.51
     min: 0
     max: 16
   highQualityFiltering:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
@@ -124,17 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9343219, z: 0.9327559, w: -0.35243866}
+    m_Value: {x: 0.91075855, y: 0.9281179, z: 1, w: -0.34365904}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.95594317, z: 0.8237741, w: 0.078319676}
+    m_Value: {x: 1, y: 0.9394472, z: 0.84491545, w: 0.08779631}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.9847723, y: 1, z: 0.9055833, w: 0}
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: -4627019894639025658}
   - {fileID: -4476603617840298241}
   - {fileID: 7146460454482016399}
+  - {fileID: 2805148591011221635}
 --- !u!114 &114104195823279190
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -319,6 +320,29 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &2805148591011221635
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
+  m_Name: VolumetricLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  depthExtent:
+    m_OverrideState: 1
+    m_Value: 70.8
+    min: 0.1
+  sliceDistributionUniformity:
+    m_OverrideState: 0
+    m_Value: 0.75
+    min: 0
+    max: 1
 --- !u!114 &4458911176099340003
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -357,7 +381,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.98
+    m_Value: 2.04
     min: 0
     max: 4
   thicknessModifier:
@@ -397,14 +421,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.014239942}
+    m_Value: {x: 1, y: 0.9845118, z: 0.95982313, w: 0.031799205}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.03915984}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.061457407}

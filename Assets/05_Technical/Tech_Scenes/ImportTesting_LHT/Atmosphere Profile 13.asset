@@ -179,6 +179,7 @@ MonoBehaviour:
   - {fileID: -4121419304302483511}
   - {fileID: -8293921987198853931}
   - {fileID: -2239870951363224522}
+  - {fileID: 5588527546617827038}
 --- !u!114 &474558576410021653
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.467
+    m_Value: 0.514
     min: 0
     max: 1
   scatter:
@@ -300,6 +301,50 @@ MonoBehaviour:
   hdriSky:
     m_OverrideState: 1
     m_Value: {fileID: 8900000, guid: b68dfcb836bb07948ae5532db1c5deeb, type: 3}
+--- !u!114 &5588527546617827038
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: AmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1.33
+    min: 0
+    max: 4
+  thicknessModifier:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 1
+    max: 10
+  directLightingStrength:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  noiseFilterTolerance:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -8
+    max: 0
+  blurTolerance:
+    m_OverrideState: 0
+    m_Value: -4.6
+    min: -8
+    max: 1
+  upsampleTolerance:
+    m_OverrideState: 0
+    m_Value: -12
+    min: -12
+    max: -1
 --- !u!114 &6732752253088023163
 MonoBehaviour:
   m_ObjectHideFlags: 3
