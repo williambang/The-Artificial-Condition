@@ -7,51 +7,30 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MovingLavaRiver_V2_MTL
-  m_Shader: {fileID: -6465566751694194690, guid: d4179fae080c05542af6f86718557c5f,
-    type: 3}
-  m_ShaderKeywords: 
+  m_Name: SpecRocky_MTL
+  m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
+  m_ShaderKeywords: _DISPLACEMENT_LOCK_TILING_SCALE _HEIGHTMAP _MASKMAP _NORMALMAP
+    _NORMALMAP_TANGENT_SPACE _VERTEX_DISPLACEMENT _VERTEX_DISPLACEMENT_LOCK_OBJECT_SCALE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
   disabledShaderPasses:
+  - DistortionVectors
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
   - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_16189C87:
-        m_Texture: {fileID: 2800000, guid: 37bf7faaf19a91a49bd8a62aaeb59656, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_6C075685:
-        m_Texture: {fileID: 2800000, guid: 9b4c43c0ea4172b44aaa12dad97d7dc1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_735C11EA:
-        m_Texture: {fileID: 2800000, guid: e0193c4b1f6942542aba98621106335e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_AB03C00B:
-        m_Texture: {fileID: 2800000, guid: 3a866a6e7b123cd469eab2b67262f26c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_BE28B418:
-        m_Texture: {fileID: 2800000, guid: f3c45a0765a016f46894451471e31f18, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_C18405B8:
-        m_Texture: {fileID: 2800000, guid: 81f9bedacee79ce488b36244344dc104, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 871439a3716c4ca459636e17507fee0a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -79,7 +58,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9a7ef2d317358d24c86c1acbcb896491, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IridescenceMaskMap:
@@ -91,15 +70,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 871439a3716c4ca459636e17507fee0a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f7593fe1fb3751c4aaf2125113264df0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0488a87eddebd894693fb1b8f195e002, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -131,9 +110,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3627488C: 20
-    - Vector1_40A6EB19: 2
-    - Vector1_6DC84918: 0.51
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -159,19 +135,19 @@ Material:
     - _DiffusionProfileHash: 0
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
-    - _DisplacementMode: 0
+    - _DisplacementMode: 1
     - _DistortionBlendMode: 0
     - _DistortionBlurBlendMode: 0
-    - _DistortionBlurDstBlend: 0
+    - _DistortionBlurDstBlend: 1
     - _DistortionBlurRemapMax: 1
     - _DistortionBlurRemapMin: 0
     - _DistortionBlurScale: 1
-    - _DistortionBlurSrcBlend: 0
+    - _DistortionBlurSrcBlend: 1
     - _DistortionDepthTest: 1
-    - _DistortionDstBlend: 0
+    - _DistortionDstBlend: 1
     - _DistortionEnable: 0
     - _DistortionScale: 1
-    - _DistortionSrcBlend: 0
+    - _DistortionSrcBlend: 1
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
@@ -190,14 +166,14 @@ Material:
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
     - _HdrpVersion: 2
-    - _HeightAmplitude: 0.02
+    - _HeightAmplitude: 8
     - _HeightCenter: 0.5
-    - _HeightMapParametrization: 0
+    - _HeightMapParametrization: 1
     - _HeightMax: 1
     - _HeightMin: -1
     - _HeightOffset: 0
     - _HeightPoMAmplitude: 2
-    - _HeightTessAmplitude: 2
+    - _HeightTessAmplitude: 800
     - _HeightTessCenter: 0.5
     - _InitialBend: 1
     - _InvTilingScale: 1
@@ -214,13 +190,14 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
+    - _PreRefractionPass: 0
     - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
     - _ShiverDirectionality: 0.5
     - _ShiverDrag: 0.2
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMax: 0.44936597
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -231,10 +208,10 @@ Material:
     - _StencilRefGBuffer: 2
     - _StencilRefMV: 128
     - _StencilWriteMask: 3
-    - _StencilWriteMaskDepth: 32
+    - _StencilWriteMaskDepth: 48
     - _StencilWriteMaskDistortionVec: 64
-    - _StencilWriteMaskGBuffer: 3
-    - _StencilWriteMaskMV: 128
+    - _StencilWriteMaskGBuffer: 51
+    - _StencilWriteMaskMV: 176
     - _Stiffness: 1
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
@@ -254,12 +231,11 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
-    - _ZTestModeDistortion: 8
+    - _ZTestModeDistortion: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_9AA37BE2: {r: 8.776337, g: 0, b: 0.07251566, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -270,7 +246,7 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.22352941, g: 0.22745098, b: 0.23921569, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
