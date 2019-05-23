@@ -102,7 +102,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 134.04
+    m_Value: 71.5
     min: 1
   baseHeight:
     m_OverrideState: 1
@@ -123,6 +123,29 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-4319481831528777858
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
+  m_Name: VolumetricLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  depthExtent:
+    m_OverrideState: 1
+    m_Value: 9.6
+    min: 0.1
+  sliceDistributionUniformity:
+    m_OverrideState: 0
+    m_Value: 0.75
+    min: 0
+    max: 1
 --- !u!114 &-3503689374043908459
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -293,6 +316,7 @@ MonoBehaviour:
   - {fileID: 349322876745160766}
   - {fileID: -669797942119900816}
   - {fileID: -8226128073230819257}
+  - {fileID: -4319481831528777858}
 --- !u!114 &349322876745160766
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -343,7 +367,7 @@ MonoBehaviour:
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
+  m_AdvancedMode: 1
   focusMode:
     m_OverrideState: 1
     m_Value: 2
@@ -353,7 +377,7 @@ MonoBehaviour:
     min: 0.1
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
     min: 0
   nearFocusEnd:
     m_OverrideState: 1
@@ -361,11 +385,11 @@ MonoBehaviour:
     min: 0
   farFocusStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 5.1
     min: 0
   farFocusEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 23.33
     min: 0
   nearSampleCount:
     m_OverrideState: 0
@@ -383,8 +407,8 @@ MonoBehaviour:
     min: 3
     max: 16
   farMaxBlur:
-    m_OverrideState: 0
-    m_Value: 8
+    m_OverrideState: 1
+    m_Value: 16
     min: 0
     max: 16
   highQualityFiltering:
