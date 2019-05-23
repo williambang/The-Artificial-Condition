@@ -6048,7 +6048,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 30
+  field of view: 20
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -6073,8 +6073,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740304666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 0.3057376}
-  m_LocalPosition: {x: 0, y: 1.832, z: -4.33}
+  m_LocalRotation: {x: -0.060299203, y: 0.26789764, z: 0.017536197, w: 1}
+  m_LocalPosition: {x: -1.8530755, y: 0.1176, z: -5.908079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14094,7 +14094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 1
-  shadowResolution: 2048
+  shadowResolution: 4096
   shadowDimmer: 1
   volumetricShadowDimmer: 1
   shadowFadeDistance: 10000
@@ -14157,8 +14157,8 @@ MonoBehaviour:
   nonLightmappedOnly: 0
   lightTypeExtent: 0
   m_SpotLightShape: 0
-  shapeWidth: 60
-  shapeHeight: 60
+  shapeWidth: 150
+  shapeHeight: 150
   aspectRatio: 1
   shapeRadius: 0
   maxSmoothness: 0.99
@@ -14573,7 +14573,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0, y: -0.1, z: -0.027401507}
+      - m_Value: {x: 0, y: -0.1, z: 0.1}
         m_Name: DustForce
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
@@ -23105,7 +23105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117554437}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000015795229}
-  m_LocalPosition: {x: 0.028, y: 1.123, z: -1.391}
+  m_LocalPosition: {x: 0.028, y: 1.395, z: -1.391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1199199973}
@@ -23124,7 +23124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 1
-  shadowResolution: 2048
+  shadowResolution: 4096
   shadowDimmer: 1
   volumetricShadowDimmer: 1
   shadowFadeDistance: 10000
@@ -23188,7 +23188,7 @@ MonoBehaviour:
   lightTypeExtent: 1
   m_SpotLightShape: 0
   shapeWidth: 0.6442137
-  shapeHeight: 1.5608594
+  shapeHeight: 1.230294
   aspectRatio: 1
   shapeRadius: 0
   maxSmoothness: 0.99
@@ -23197,7 +23197,7 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
-  displayLightIntensity: 100
+  displayLightIntensity: 25
   displayAreaLightEmissiveMesh: 0
   areaLightCookie: {fileID: 0}
   areaLightShadowCone: 119
@@ -23225,7 +23225,7 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 31.656025
+  m_Intensity: 10.040406
   m_Range: 68.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
