@@ -77,13 +77,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.925509, z: 0.9371785, w: -0.017800037}
+    m_Value: {x: 1, y: 0.95108694, z: 0.9628274, w: -0.017800037}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9619424, z: 0.9942312, w: 0.19284092}
+    m_Value: {x: 1, y: 0.9519767, z: 0.9650106, w: 0.13138351}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.06407974}
+    m_Value: {x: 0.9897569, y: 0.9980692, z: 1, w: 0.06407974}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff652df78c97c4f963064ad1f34619, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   master:
     m_OverrideState: 0
@@ -648,15 +648,60 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   hueVsSat:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 5
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.05950841
+          value: 0.5106383
+          inSlope: 0.23495308
+          outSlope: 0.23495308
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.14747736
+          value: 0.44946808
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.69081503
+          value: 0.47028658
+          inSlope: 0.047714133
+          outSlope: 0.047714133
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.89909446
+          value: 0.38031918
+          inSlope: 0.017702807
+          outSlope: 0.017702807
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.9896507
+          value: 0.4787234
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -686,7 +731,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  m_SelectedCurve: 0
+  m_SelectedCurve: 5
 --- !u!114 &6528240372531583218
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -703,12 +748,12 @@ MonoBehaviour:
   m_AdvancedMode: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.134
+    m_Value: 0.414
     min: 0
     max: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.122
+    m_Value: 0.488
     min: 0
     max: 1
   tint:
