@@ -32,6 +32,7 @@ MonoBehaviour:
   m_Name: VolumetricFog
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 1
     m_Value: 0
@@ -78,8 +79,7 @@ MonoBehaviour:
     m_Value: 5.1
   meanHeight:
     m_OverrideState: 1
-    m_Value: 1
-    min: 1
+    m_Value: 5.1
   anisotropy:
     m_OverrideState: 1
     m_Value: 0.59
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: VolumetricLightingController
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   depthExtent:
     m_OverrideState: 1
     m_Value: 51.9
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Name: ProceduralSky
   m_EditorClassIdentifier: 
   active: 0
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 0
     m_Value: 0
@@ -203,6 +205,7 @@ MonoBehaviour:
   m_Name: HDRISky
   m_EditorClassIdentifier: 
   active: 0
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
     m_Value: 0
@@ -251,9 +254,13 @@ MonoBehaviour:
   m_Name: VisualEnvironment
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
     m_Value: 1
+  skyAmbientMode:
+    m_OverrideState: 0
+    m_Value: 0
   fogType:
     m_OverrideState: 1
     m_Value: 3
@@ -270,6 +277,7 @@ MonoBehaviour:
   m_Name: HDShadowSettings
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   maxShadowDistance:
     m_OverrideState: 1
     m_Value: 10000
@@ -282,31 +290,21 @@ MonoBehaviour:
   cascadeShadowSplit0:
     m_OverrideState: 0
     m_Value: 0.05
-    min: 0
-    max: 1
   cascadeShadowSplit1:
     m_OverrideState: 0
     m_Value: 0.15
-    min: 0
-    max: 1
   cascadeShadowSplit2:
     m_OverrideState: 0
     m_Value: 0.3
-    min: 0
-    max: 1
   cascadeShadowBorder0:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder1:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder2:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
   cascadeShadowBorder3:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
